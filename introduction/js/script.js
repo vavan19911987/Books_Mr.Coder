@@ -1,65 +1,144 @@
 "use strict";
-// let obj = {
-//
+// let test = -1;
+// let test2 = 4;
+
+// if (test <= 1 && test2 >= 3) {
+//  console.log(true)
+// }else {
+//  console.log(false)
 // }
-//
-// obj['a'] = 1;
-// obj['b'] = 2;
-// obj['c'] = 3;
-//
-// console.log(obj);
 
-// let obj = {
-//     22: 'a',
-//     33: 'b',
-//     12: 'c'
+
+// let num = 3;
+
+// if (num > 0 && num < 5 || num > 10 && num
+//  < 20) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
 // }
-//
-// console.log(obj);
 
-// let obj = {x: 1, y: 2, z: 3};
-// let keys2 = Object.keys(obj);
-// let keys = Object.keys(obj).length;
-// let keys3 = 'x';
-// console.log(keys2);
-// console.log(keys);
-// console.log(obj[keys3]);
+// let num = 3;
 
-// let obj = {x: 1, y: 2, z: 3};
-// console.log(obj['x']);
+// if (num == 0 || num > 1 && num < 5 ) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
 
-// let obj = {x: 1, y: 2, z: 3};
-// let key = 'x';
-// console.log(obj[key]);
+// let num = 3;
 
-// let obj = {x: 1, y: 2, z: 3};
-//
-// let prop = 'x';
-// console.log(obj[prop]);
+// if ( (num > 0 && num < 5) || (num > 10 && num
+//  < 20) ) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
 
-// let obj = {x: 1, y: 2, prop: 3};
-//
-// let prop = 'x';
-// console.log(obj[prop]);
+// let num1 = 3;
+// let num2 = 5;
+
+// if ( num1 > 0 && (num2 == 3 || num2 == 5) ) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
 
 
-// let key = 'x';
-//
-// let obj = {
-//     [key]: 1,
-//     y: 2,
-//     z: 3
-// };
-// console.log(obj);
+// let num = 3;
 
-// let key1 = 'x';
-// let key2 = 'y';
-// let key3 = 'z';
-//
-// let obj = {
-//     [key1]: 1,
-//     [key2]: 2,
-//     [key3]: 3
-// };
-//
-// console.log(obj);
+// if (num > (5 && num < 10) || num == 20) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+// let num = 3;
+
+// if (num > 5 || num > (0 && num < 3)) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+// let num = 3;
+
+// if (num == 9  num > (10 && num < 20)  num
+//  > 20 && num < 30) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+
+
+// if (num <= 0 || num >= 5) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+// if ( !(num > 0 && num < 5) ) {
+//  .log('+++');
+// } else {
+//  console.log('---');
+// }
+
+// let num1 = 5;
+// let num2 = 7;
+
+// if (!(num1 >= 0 || num2 <= 10)) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+
+// let test;
+
+// if (test) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+
+// let test1 = true;
+// let test2 = true;
+
+// if (!test1 && !test2) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+
+// let test1 = true;
+// let test2 = true;
+// let test3 = true;
+
+// if (test1 && test2  && test3) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+// let test1 = true;
+// let test2 = true;
+// let test3 = true;
+
+// if (test1 || test2 && test3) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
+
+// let test1 = true;
+// let test2 = true;
+// let test3 = true;
+
+// if (test1 || !test2  && !test3) {
+//  console.log('+++');
+// } else {
+//  console.log('---');
+// }
