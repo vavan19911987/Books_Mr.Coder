@@ -1,137 +1,201 @@
 "use strict";
-// let num1 = 1;
-// let num2 = 2;
-// let sum = num1 + num2;
+// ЦИКЛЫ
+
+// for (let i = 0; i <= 100; i++) {
+//     if (i % 2 === 0) {
+//         console.log(i + ' Четные');
 //
-// if (sum === 3) {
-//     console.log('+++');
-// } else {
-//     console.log('---');
-// }
-
-// let num1 = '1';
-// let num2 = '2';
-// let sum = +num1 + +num2;
+//     } else if (i % 2 == 1){
+//         console.log(i + ' Не четные');
 //
-// if (sum === 3) {
-//     console.log('+++');
-// } else {
-//     console.log('---');
-// }
-
-// let num = 123;
-// let str = String(num);
-//
-// if (str[0] === '1') {
-//     console.log('+++');
-// } else {
-//     console.log('---');
-// }
-
-// let num = 12;
-//
-// let str = String(num);
-//
-// if (str.length === 2) {
-//     console.log('+++');
-// } else {
-//     console.log('---');
-// }
-
-// Код должен проверить равна ли сумма первых трех цифр числа сумме вторых трех чисел:
-
-// let num = '123033'; // берем в кавычки, чтобы обращаться к цифрам
-//
-// let sum1 = +num[0] + +num[1] + +num[2];
-// let sum2 = +num[3] + +num[4] + +num[5];
-//
-// if (sum1 == sum2) {
-//     console.log('суммы равны');
-// } else {
-//     console.log('суммы не равны');
-// }
-
-// Практика на условия if-else в JavaScript
-
-// В переменной month лежит какое-то число из интервала
-// от 1 до 12. Определите в какую пору года попадает этот месяц (зима, лето, весна, осень).
-
-// let month = 10;
-//
-// if (month > 0 && month <= 3) {
-//     console.log('зима');
-// } else if (month > 3 && month <= 6) {
-//     console.log('весна');
-// } else if (month > 6 && month <= 9) {
-//     console.log('лето');
-// } else if (month > 9 && month <= 12) {
-//     console.log('осень');
-// } else {
-//     console.log('не время года');
-// }
-
-// Дана строка, состоящая из символов, например, 'abcde'. Проверьте,
-//     что первым символом этой строки является буква 'a'. Если это так - выведите 'да', в противном случае выведите 'нет'.
-
-// let str = 'abcde';
-//
-// if (str[0] === 'b') {
-//     console.log('yes');
-// } else {
-//     console.log('no');
-// }
-//
-// Дано число, например, 12345. Проверьте, что первым символом этого числа является цифра 1, 2 или 3.
-// Если это так - выведите 'да', в противном случае выведите 'нет'.
-
-// let num = 12345;
-// let str = String(num);
-//
-// if (str[0] === '1' || str[0] === '2' || str[0] === '3') {
-//     console.log('yes');
-// } else {
-//     console.log('no');
-// }
-// Дано трехзначное число. Найдите сумму цифр этого числа.
-
-// let num = 123;
-// let str = String(num);
-// console.log(+str[0] + +str[1] + +str[2]);
-
-// Дано число из 6-ти цифр. Проверьте, что сумма первых трех цифр равняется сумме вторых трех цифр.
-//     Если это так - выведите 'да', в противном случае выведите 'нет'.
-
-// let num = 123033;
-// let str = String(num);
-//
-// let sum1 = +str[0] + +str[1] + +str[2];
-// let sum2 = +str[3] + +str[4] + +str[5];
-//
-// if (sum1 === sum2) {
-//     console.log('равны');
-// } else  {
-//     console.log('не равны');
+//     }
 // }
 
 
+// for (let i = 100; i >= 0; i--) {
+//     console.log(i);
+// }
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+// for (let elem of arr) {
+//     console.log(elem);
+// }
+//
+// let obj = {
+//     x: 1,
+//     y: 2,
+//     z: 3
+// };
+// for (let key in obj) {
+//     console.log(key);
+// }
+// for (let key in obj) {
+//     console.log(obj[key]);
+// }
+// let i = 11;
+// while (i <= 33) {
+//     console.log(i)
+//     i++;
+// }
+
+// Дано число num с неким начальным значением. Умножайте его на 3 столько раз, пока результат умножения не станет больше 1000.
+// Какое число получится? Посчитайте количество итераций, необходимых для этого.
+
+// let num = 5;
+// while (num <= 1000) {
+//     num = num * 3;
+//     console.log(num);
+// }
+//
+// let arr = [1, 2, 3, 4, 5];
+//     for (let i = arr.length - 1; i >= 0; --i) {
+//         console.log(arr[i]);
+//     }
 
 
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+//
+// for (let i = 0; i <= arr.length - 1; i++) {
+//     console.log(arr[i]);
+// }
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+// for (let i = arr.length - 1; i >= 0; --i) {
+//     console.log(arr[i]);
+// }
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+//
+// for (let i = 0; i <= arr.length -1; i++) {
+//     console.log(arr[i]);
+// }
+// Выведите в консоль те элементы массива, которые больше 3-х, но меньше 10.
+// let arr = [2, 5, 9, 15, 1, 4];
+//
+// for (let elem of arr) {
+//     if (elem >= 3 && elem <= 10) {
+//         console.log(elem);
+//     }
+// }
+// Выведите в консоль те элементы объекта, значения которых - нечетные числа.
+
+// let obj = {
+//     a: 1,
+//     b: 2,
+//     c: 3,
+//     d: 4,
+//     e: 5
+// };
+//
+// for (let elem in obj) {
+//     if (obj[elem] % 2 === 1) {
+//         console.log(obj[elem]);
+//     }
+// }
+
+// let res = 0;
+//
+// for (let i = 1; i <= 100; i++) {
+//     res += i;
+// }
+//
+// console.log(res);
+
+// let res = 0;
+//
+// for (let i = 1; i <= 100; i++) {
+//     res += i;
+// }
+//
+// console.log(res);
+// Найдите сумму четных чисел от 2 до 100.
+// let sum = 0;
+// for (let i = 2; i <= 100; i++) {
+//     if (i % 2 === 0) {
+//         sum += i;
+//     }
+// }
+// console.log(sum);
+
+// let sum = 0;
+// for (let i = 2; i <= 100; i++) {
+//     if (i % 2 === 1) {
+//         sum += i;
+//     }
+// }
+// console.log(sum);
+
+// Найдите произведение целых чисел от 1 до 20.
 
 
+// let sum = 1;
+// for (let i = 1; i <= 20; i++) {
+//     if (i <= 20){
+//         sum *= i;
+//     }
+// }
+// console.log(sum);
 
+// let arr = [2, 5, 9, 3, 1, 4];
+// let sum = 0;
+// for (let elem of arr) {
+//     if (elem % 2 === 0) {
+//         sum += elem;
+//     }
+// }
+// console.log(sum);
+// let arr = [2, 5, 9, 3, 1, 4];
+// let sum = 1;
+// for (let elem of arr) {
+//     if (elem) {
+//         sum = sum * elem;
+//
+//     }
+// }
+// console.log(sum);
 
+// let arr = [2, 5, 9, 3, 1, 4];
+// let sum = 0;
+// for (let elem of arr) {
+//     let cub = elem * 2;
+//     sum += cub;
+// }
+// console.log(sum);
 
+// let arr = [];
+// for (let i = 9; i >= 0; --i) {
+//     arr += i;
+//
+// }
+//
+// console.log(arr);
 
+// Переберите циклом числа от 10 до 1000 и выведите в консоль первую цифру каждого числа.
 
+// for (let i = 0; i <= 1000; i++) {
+//     let str = String(i);
+//     console.log(str[0]);
+// }
 
+// Переберите циклом числа от 10 до 1000 и выведите в консоль сумму первой и второй цифры каждого числа.
 
+// for (let i = 10; i < 1000; i++) {
+//     let str = String(i);
+//     console.log(+str[0] + +str[1])
+// }
+// Переберите циклом числа от 10 до 1000 и выведите те числа, первая цифра которых равна 1
 
+// for (let i = 10; i <= 1000; i++) {
+//     let str = String(i);
+//     if (str[0] === '1') {
+//         console.log(str);
+//     }
+// }
+// Переберите циклом числа от 10 до 1000 и выведите на экран те числа, сумма двух первых цифр которых равна 5.
 
-
-
-
-
-
-
-
-
+// for (let i = 10; i <= 1000; i++) {
+//     let str = String(i);
+//     let sum = +str[0] + +str[1];
+//     if (sum === 5) {
+//         console.log(str);
+//     }
+// }
