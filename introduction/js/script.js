@@ -1,133 +1,55 @@
 "use strict";
-// let day = 30;
+
+
+// let arr = [1, 2, 3, 4, 5];
+// let sum;
+// if (arr.length <= 10) {
+//     sum = +arr[0] + +arr[1] + +arr[2] + +arr[3] + +arr[4];
+// } else {
+//     console.log('no');
+// }
 //
-// if (day <= 10) {
-//     console.log('перва декада месяца');
-// } else if (day <= 20) {
-//     console.log('вторая декада месяца');
-// } else if (day <= 31) {
-//     console.log('третья декада месяца')
+// console.log(sum);
+
+// let str = 'abcd';
+// if (str[0] === 'a') {
+//     console.log('yes');
 // } else {
 //     console.log('no');
 // }
 
-// let num = 99;
-//
-// if (num >= 10) {
-//     if (num <= 99) {
-//        num = String(num);
-//         let sum = +num[0] + +num[1]
-//         console.log(sum);
-//         if (sum <= 9) {
-//             console.log('однозначное число');
-//         }
-//         if (sum >= 10) {
-//             console.log('двухзначное число');
-//         }
-//     }
-// }else {
-//     console.log('введите двух значное число');
-// }
-
-
-// let lang = 'ru';
-// switch (lang) {
-//     case 'en':
-//         console.log('en');
-//         break;
-//     case 'de':
-//         console.log('de');
-//         break;
-//     case 'ru':
-//         console.log('ru');
-//         break;
-//     default:
-//         console.log('no');
-// }
-
-
-
-// let num = -2;
-// let res = num >= 0 ? '1' : '2';
-//
-// console.log(res);
-
-// let a = 2 * (3 - 1);
-// let b = 6 - 2;
-// let result = a == b;
-// console.log(result);
-
-// let a = 5 * (7 - 4);
-// let b = 1 + 2 + 7;
-//
-// console.log(a > b);
-
-// let a = 2 ** 4;
-// let b = 4 ** 2;
-// console.log(a != b)
-
-
-// let agg = confirm('Вам есть 18 лет');
-//
-// if (agg) {
-//     alert('вы взрослый');
-// }else {
-//     alert('вы еще юнны');
-// }
-
-// let age = 18;
-// let adult;
-//
-// if (age >= 18) {
-//     adult = true;
+// let str = 'abcd';
+// let x = str[str.length - 1];
+// if (x === 'd') {
+//     console.log('yes');
 // } else {
-//     adult = false;
+//     console.log('no');
 // }
-// console.log(adult);
 
-
-// let age = 22;
-// let res;
-//
-// if (age >= 18) {
-//     if (age <= 23) {
-//         res = 'от 18 до 23';
-//     } else {
-//         res = 'больше 23';
-//     }
+// let str = 'abcd';
+// if (str[0] === 'a' || str[0] === 'b') {
+//     console.log('yes');
 // } else {
-//     res = 'меньше 18';
+//     console.log('no');
 // }
-//
-// console.log(res);
 
-// let age = 26;
-// let res;
+// let num = 12345;
 //
-// if (age >= 18) {
-//     if (age <= 23) {
-//         res = 'от 18 до 23';
-//     } else {
-//         res = 'больше 23';
-//     }
+// let strNum = String(num);
+//
+// if (strNum[strNum.length - 1] === '5') {
+//     console.log('yes');
 // } else {
-//     res = 'меньше 18';
-// }
-//
-// console.log(res);
-
-// let min = 27;
-//
-// if (min >= 0 && min <= 19) {
-//     console.log('1 треть');
-// }
-//
-// if (min >= 20 && min <= 39) {
-//     console.log('2 треть');
-// }
-//
-// if (min >= 40 && min <= 60) {
-//     console.log('3 треть');
+//     console.log('no');
 // }
 
+// Пусть в переменной num хранится число. Определите, четное число или нет.
+//     Число будет четным, если последний символ равен 0, 2, 4, 6 или 8, и нечетным в противном случае.
 
+// let num = 11;
+//
+// if (num % 2 === 0) {
+//     console.log('четное');
+// } else {
+//     console.log('не четное');
+// }
