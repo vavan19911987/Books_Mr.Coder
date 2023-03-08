@@ -1,359 +1,378 @@
 "use strict";
 
-//"Основы работы с пользовательскими функциями в JavaScript"
+//"Основы работы с пользовательскими функциями в JavaScript ПРАКТИКА"
 
-// Сделайте функцию, выводящую в консоль ваше имя.
-// Сделайте функцию, выводящую в консоль сумму чисел от 1 до 100.
+// Сделайте функцию, которая параметром будет принимать массив и возвращать сумму его элементов.
 
-// function name() {
-//     console.log('Владимир');
-// }
-// name();
-//
-// function num() {
-//     let num = 0;
-//     for (let i = 0; i <= 10; i++) {
-//         num += i;
-//     }
-//     console.log(num);
-// }
-// num();
-
-// function cube(num) {
-//     console.log(num * 3);
-// }
-// cube(2);
-
-// Сделайте функцию, которая параметром принимает число и проверяет,
-//     положительное это число или отрицательное.
-//     В первом случае пусть функция выводит в консоль текст '+++', а во втором '---'.
-
-// function nums(num) {
-//     if (num > 0) {
-//         console.log('+++');
-//     } else {
-//         console.log('---');
-//     }
-// }
-// nums(3);
-
-// Сделайте функцию, которая параметрами принимает 3 числа и выводит в консоль сумму этих чисел.
-
-// function nums(num1,num2,num3) {
-//     console.log(num1 + num2 + num3);
-// }
-// nums(1,2,3);
-
-// Сделайте функцию func, которая параметром будет принимать 3 числа и выводить в консоль их сумму.
-//     Пусть даны 3 переменные с числами:
-//     С помощью созданной вами функции выведите в консоль сумму значений эти переменных.
-
-// let param1 = 1;
-// let param2 = 2;
-// let param3 = 3;
-//
-// function sum(num1,num2,num3) {
-//     console.log(num1 + num2 + num3);
-// }
-// sum(param1,param2,param3);
-
-// Сделайте функцию, которая параметром принимает число, а возвращает куб этого числа.
-//     С помощью этой функции найдите куб числа 3 и запишите его в переменную res.
-
-// function number(num) {
-//     return Math.pow(num,3);
-// }
-// let res = number(4);
-// console.log(res);
-
-// Сделайте функцию, которая параметром принимает число, а возвращает квадратный корень из этого числа.
-//     С помощью этой функции найдите корень числа 3, затем найдите корень числа 4.
-// Просуммируйте полученные результаты и выведите их в консоль.
-
-
-// function number(num) {
-//     return Math.sqrt(num);
-// }
-// let res = number(8);
-// let res2 = number(17);
-// console.log(res.toFixed(1));
-// console.log(Math.ceil(res2).toFixed(1));
-// console.log(Math.ceil(number(199)).toFixed(1));
-
-// Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, округляющая дробь до трех знаков в дробной части:
-// С помощью этих функций найдите квадратный корень из числа 2 и округлите его до трех знаков в дробной части.
-
-// function sqrt(num) {
-//     return Math.sqrt(num);
-// }
-//
-// function round(num) {
-//     return num.toFixed(3);
-// }
-// let result = round(sqrt(2));
-// console.log(result);
-
-// Пусть у вас есть функция, возвращающая квадратный корень из числа, и функция, возвращающая сумму трех чисел:
-//     С помощью этих функций найдите сумму корней чисел 2, 3 и 4 и запишите ее в переменную res.
-
-
-// function sqrt(num) {
-//     return Math.sqrt(num);
-// }
-// function sum(num1, num2, num3) {
-//     return num1 + num2 + num3;
-// }
-// // Пусть у вас есть функция, округляющая дробь до трех знаков в дробной части:
-// // С помощью этой функции модифицируйте предыдущую задачу так, чтобы в переменную res записывалась дробь, округленная до 3-х знаков в дробной части.
-//
-// function round(num) {
-//     return num.toFixed(3);
-// }
-// let res = round(sum(sqrt(2),sqrt(3),sqrt(4)));
-// console.log(res);
-
-// Что выведется в консоль в результате выполнения следующего кода:
-//     Объясните почему. Что хотел сделать автор данного кода? Исправьте ошибку автора.
-
-// function func(num) {
+// function arrSum(arr) {
 //     let sum = 0;
-//
+//     for (let arrElement of arr) {
+//         sum += arrElement;
+//     }
+//     return sum;
+// }
+// console.log(arrSum([1,2,3]));
+
+// Сделайте функцию, которая параметром будет принимать число и возвращать массив его делителей.
+// function divider(num) {
+//     let arr = [];
 //     for (let i = 1; i <= num; i++) {
-//         sum += i;
-//     }
-//     return sum;
-//
-// }
-//
-// console.log( func(5) );
-
-// Напишите функцию, которая параметром будет принимать число и делить
-// его на 2 столько раз, пока результат не станет меньше 10
-//     . Пусть функция возвращает количество итераций, которое потребовалось
-// для достижения результата.
-//
-// function fun(num) {
-// let sum = 0;
-//
-//     for (let i = 1; i <= num; i++) {
-//         sum = num / 2;
-//
-//         num  = sum.toFixed(0);
-//
-//
-//         if (sum.toFixed(0) <= 10) {
-//
-//                 return i;
-//             }
-//             i++;
-//     }
-// }
-// //
-// console.log(fun(1300));
-// // вот дана задача как бы решина выводит иттерации но если ввести допустим 1300 или 1900 то выдает undefined
-// // где я что сделал не так
-
-// Перепишите ее в сокращенной форме согласно изученной теории
-// function func(num1, num2) {
-//     if (num1 > 0 && num2 > 0) {
-//         return  num1 * num2;
-//     } else {
-//         return  num1 - num2;
-//     }
-// }
-// console.log(func(-3, -4));
-
-// Сделайте функцию, которая параметром будет принимать массив с числами,
-// и проверять, что все элементы в этом массиве являются четными числами.
-
-// function isPositive(arr) {
-//     for (let elem of arr) {
-//         if (elem % 2 === 1) {
-//             return false;
+//         if (num % i === 0) {
+//             arr.push(i);
 //         }
 //     }
-//     return true;
+//     return arr;
 // }
-//
-// console.log(isPositive([2, 4, 6]));
+// console.log(divider(15));
 
-// // Сделайте функцию, которая параметром будет принимать число и проверять,
-// //     что все цифры это числа являются нечетными.
-//
-// function number(num) {
-//     num = String(num);
-//     let arr = num.split('');
-//     for (let string of arr) {
-//         if (string % 2 === 0) {
-//             return false;
+// Сделайте функцию, которая параметром будет принимать строку и возвращать массив ее символов.
+
+// function strArr(str) {
+//     return str.split('');
+// }
+// console.log(strArr('absd'));
+// Сделайте функцию, которая параметром будет принимать строку и переворачивать ее символы в обратном порядке.
+
+// function strRevers(str) {
+//     return str.split('').reverse();
+// }
+// console.log(strRevers('absd'));
+
+// Сделайте функцию, которая параметром будет принимать строку и делать заглавной первую букву этой строки.
+// function strUP(str){
+//     return str.slice(0,1).toUpperCase() + str.slice(1);
+// }
+// console.log(strUP('qwerty'));
+
+// // Сделайте функцию, которая параметром будет принимать строку и делать заглавной первую букву каждого слова этой строки.
+//  function strUp(str) {
+//     str = str.split(' ')
+//      let x = '';
+//      for (const elem of str) {
+//          x  += (elem.slice(0,1).toUpperCase()  + elem.slice(1) +  ' ');
+//      }
+//      return x.split(' ').join(' ');
+//  }
+// console.log(strUp('привет мое имя владимир я разработчик'));
+
+// Сделайте функцию, заполняющую массив целыми числами от 1 до заданного.
+
+// function numArr() {
+//     let arr = [];
+//     for (let i = 1; i <= 100; i++) {
+//         arr.push(i);
+//     }
+//     return arr;
+// }
+// console.log(numArr())
+
+// Сделайте функцию, которая будет возвращать случайный элемент из массива.
+
+// function getArr(arr) {
+//         let x = Math.floor(Math.random() * arr.length) ;
+//     return arr[x];
+// }
+// console.log(getArr([1,2,3,4,5,6,7,8,9]));
+
+// Сделайте функцию, которая будет проверять пару чисел на дружественность.
+//     Дружественные числа - два числа, для которых сумма всех собственных
+// делителей первого числа равна второму числу и наоборот,
+//     сумма всех собственных делителей второго числа равна первому числу.
+
+// function divider(num) {
+//     let arr = [];
+//     for (let i = 1; i < num; i++) {
+//         if (num % i === 0) {
+//             arr.push(i);
 //         }
 //     }
-//     return true;
+//     return arr;
 // }
-// console.log(number(1357));
-
-// Сделайте функцию, которая параметром будет принимать массив и проверять,
-//     есть ли в этом массиве два одинаковых элемента подряд.
-//
-// function arr(arr) {
-//     for (let i = 1; i < arr.length; i++) {
-//         if (arr[i] === arr[i + 1]) {
-//             return true;
+// function divider2(num2) {
+//     let arr = [];
+//     for (let i = 1; i < num2; i++) {
+//         if (num2 % i === 0) {
+//             arr.push(i);
 //         }
 //     }
-//     return false;
+//     return arr;
 // }
-//
-// console.log(arr(['1', '2', '3', '4', '5', '5', '2', '2']));
-// Перепишите ее код в сокращенной форме согласно изученной теории.
-// function func(a, b) {
-//    return a === b;
-// }
-//
-// console.log(func(2,3))
-
-// Дана следующая функция:Перепишите ее код в сокращенной форме согласно изученной теории.
-
-    // function func(a, b) {
-    //    if (a + b >= 10) {
-    //       return true;
-    //    } else {
-    //       return false;
-    //    }
-    // }
-
-// function func(a, b) {
-//    return a + b >= 10;
-// }
-//
-// console.log(func(1,2))
-
-// сумма масивов
-// function func(arr1, arr2) {
-//     let res1 = 0;
-//
-//     for (let elem of arr2) {
-//         res1 += elem;
+// function sumDivider(sum1) {
+//     let sumArr = 0;
+//     for (let i = 0; i < sum1.length; i++) {
+//         sumArr += sum1[i];
 //     }
-//
-//     let res2 = 0;
-//
-//     for (let elem of arr1) {
-//         res2 += elem;
-//     }
-//
-//     return res1 / res2;
+//     return sumArr;
 // }
-//
-// console.log(func([1,2,3], [1,2,3]));
-
-// Код должен найти сумму результатов работы двух функций:
-
-// function func1() {
-//     return 3;
+// function sumDivider2(sum2) {
+//     let sumArr2 = 0;
+//     for (let i = 0; i < sum2.length; i++) {
+//         sumArr2 += sum2[i];
 //     }
-// function func2() {
-//     return 3;
+//     return sumArr2;
 // }
-// console.log( func1() + func2() );
+// function dividerSum(num1,num2) {
+//     if (num1 === num2) {
+//         return 'Дружественные числа';
+//     }
+//     return 'Не дружественные числа';
+// }
 
-// Код должен найти сумму элементов массива:
-
-//     function sum(arr) {
-//         let res = 0;
-//
-//         for (let elem of arr) {
-//             res += elem;
+// console.log(dividerSum(sumDivider(divider(12)),sumDivider2(divider2(12))));
+// function divider(num) {
+//     let arr = [];
+//     for (let i = 1; i < num; i++) {
+//         if (num % i === 0) {
+//             arr.push(i);
 //         }
-//         return res;
-//
 //     }
-//
-// console.log(sum([1, 2, 3, 4, 5]));
-
-// Код должен найти сумму элементов массива, однако, ничего не выводит в консоль:
-// function func(arr) {
-//     let res = 0;
-//
-//     for (let elem of arr) {
-//         res += elem;
+//     return arr;
+// }
+// function sumDivider(sum1) {
+//     let sumArr = 0;
+//     for (let i = 0; i < sum1.length; i++) {
+//         sumArr += sum1[i];
 //     }
-// return res;
+//     return sumArr;
+// }
+// function dividerSum(num1,num2) {
+//     if (num1 === num2) {
+//         return 'Дружественные числа';
+//     }
+//     return 'Не дружественные числа';
 // }
 //
-// console.log(func([1, 2, 3, 4, 5]))
+// console.log(dividerSum(sumDivider(divider(12)), sumDivider(divider(12))));
 
-// Код должен найти сумму результатов работы двух функций:
-
-//     function func1() {
-//         return 3;
+// function divider(dividend,dividend2) {
+//     let dividerArr = [];
+//     let dividerArr2 = [];
+//     let arrDivider = [];
+//     for (let i = 1; i < dividend; i++) {
+//         if (dividend % i === 0) {
+//             dividerArr.push(i);
+//         }
 //     }
-// function func2() {
-//     return 5;
-// }
-//
-// console.log( func1() + func2() );
-
-// Код должен найти сумму элементов массива:
-// function sum(arr) {
-//     let sum = 0;
-//
-//     for (let elem of arr) {
-//         sum += elem;
+//     for (let i = 1; i < dividend2; i++) {
+//         if (dividend2 % i === 0) {
+//             dividerArr2.push(i);
+//         }
 //     }
-//
-//     return sum;
+//     arrDivider.push(dividerArr,dividerArr2);
+//     return arrDivider;
 // }
-//
-// console.log(sum([1,2,3]))
-
-// Функция добавляет ноль к числу от 1 до 9, а числа больше 9 возвращает без изменений:
-
-// function add(num) {
-//     if (num <= 9) {
-//         return '0' + num;
-//     } else  {
-//         return num;
+// function sumDivider(sum) {
+//     let dividerSum = 0;
+//     let dividerSum2 = 0;
+//     let dividerArrSum = [];
+//     for (let i = 0; i <= sum.length; i++) {
+//         dividerSum += sum[0][i];
+//         dividerSum2 += sum[1][i];
 //     }
+//     dividerArrSum.push(dividerSum,dividerSum2)
+//     return dividerArrSum;
 // }
-// console.log(add(100))
-// Код должен найти сумму элементов массива:
-// function sum(arr) {
-//     let res = 0;
-//     for (let elem of arr) {
-//         res += elem;
-//     }
-//     return res;
-// }
-//
-// console.log(sum([1, 2, 3, 4, 5]));
-
-// Код должен найти сумму цифр числа:
-// function getDigitsSum(num) {
-//     num = String(num);
-//     let arr = num.split('');
-//     let sum = 0;
-//     for (let elem of arr) {
-//         sum += +elem;
-//     }
-//     return sum;
-// }
-// console.log(getDigitsSum(123));
-
-// Код должен проверить число на то, что оно является простым:
-
-// function isPrime(num) {
-//     for (let i = 2; i < num; i++) {
-//
-//         if (num % i !== 0) {
-//             return true;
+// function getDivider(arrSumDivider) {
+//     for (let i = 1; i < arrSumDivider.length; i++) {
+//         if (arrSumDivider[0] === arrSumDivider[1]) {
+//             return 'Дружественные числа';
 //         } else {
-//             return false;
+//             return 'Не дружественные числа';
+//         }
+//     }
+// }
+//
+// console.log(getDivider(sumDivider(divider(6,6))))
+
+// Сделайте функцию, которая будет проверять число на совершенность.
+//     Совершенное число - это число, сумма собственных делителей которого равна этому числу.
+
+// function divider(num) {
+//     let sum = 0;
+//     for (let i = 0; i < num; i++) {
+//         if (num % i === 0) {
+//             sum += i;
+//             if (sum === num) {
+//                 return 'Сумма делителя и делимого совпадают';
+//             }
+//         }
+//     }
+//     return 'Сумма делителя и делимого не совпадают';
+// }
+// console.log(divider(496));
+
+// Найдите все счастливые билеты. Счастливый билет - это билет,
+//     в котором сумма первых трех цифр его номера равна сумме вторых трех цифр его номера.
+
+// function happyTicket(ticketArr) {
+//     let sum1 = 0;
+//     let sum2 = 0;
+//     let arrHappyTicket = [];
+//     for (const elemTicket of ticketArr) {
+//         for (let elem of elemTicket) {
+//             sum1 = +elem[0] + +elem[1] + +elem[2];
+//             sum2 = +elem[3] + +elem[4] + +elem[5];
+//             if (sum1 === sum2) {
+//                 arrHappyTicket.push(elem);
+//             }
+//         }
+//     }
+//     return arrHappyTicket;
+// }
+// console.log(happyTicket([['123123'],['120331'],['555555'],['312320'],['456456'],['1233216565']]));
+
+
+// Сделайте функцию, которая параметром будет принимать два числа и возвращать массив их общих делителей.
+
+// function numbers(num1,num2) {
+//     let arr = [];
+//     for (let i = 0; i < num1; i++) {
+//         if (num1 % i === 0) {
+//             arr.push(i);
+//         }
+//     }
+//     for (let j = 0; j < num2; j++) {
+//         if (num2 % j === 0) {
+//             arr.push(j);
+//         }
+//     }
+//     return arr;
+// }
+//
+// console.log(numbers(15,12)); // правильно находит обшие делители
+
+// function numbers(num1,num2) {
+//     let arrDivider = [];
+//     let arrRes = [];
+//     for (let i = 0; i < num1; i++) {
+//         if (num1 % i === 0) {
+//             arrDivider.push(i);
+//         }
+//     }
+//     for (let j = 0; j < num2; j++) {
+//         if (num2 % j === 0) {
+//             for (let k = 0; k < arrDivider.length; k++) {
+//                 if (arrDivider[k] === j) {
+//                     arrRes.push(j);
+//                 }
+//             }
+//         }
+//     }
+//     return arrRes;
+// }
+// console.log(numbers(88,44)); // правильно находит обший делитель
+
+// Сделайте функцию, которая будет принимать строку на русском языке, а возвращать ее транслит.
+
+// function string(str) {
+//     let arrRus = str.split('');
+//     arrRus.splice(0,1,'P');
+//     arrRus.splice(1,1,'r');
+//     arrRus.splice(2,1,'i');
+//     arrRus.splice(3,1,'v');
+//     arrRus.splice(4,1,'e');
+//     arrRus.splice(5,1,'t');
+//     arrRus.splice(7,1,'M');
+//     arrRus.splice(8,1,'i');
+//     arrRus.splice(9,1,'r');
+//     let arrEn = arrRus.join('');
+//     return arrEn;
+// }
+// console.log(string('Привет Мир'));
+
+// function translit(str){
+//     let strEn = '';
+//     let converter = {
+//         'а': 'a',    'б': 'b',    'в': 'v',    'г': 'g',    'д': 'd',
+//         'е': 'e',    'ё': 'e',    'ж': 'zh',   'з': 'z',    'и': 'i',
+//         'й': 'y',    'к': 'k',    'л': 'l',    'м': 'm',    'н': 'n',
+//         'о': 'o',    'п': 'p',    'р': 'r',    'с': 's',    'т': 't',
+//         'у': 'u',    'ф': 'f',    'х': 'h',    'ц': 'c',    'ч': 'ch',
+//         'ш': 'sh',   'щ': 'sch',  'ь': '',     'ы': 'y',    'ъ': '',
+//         'э': 'e',    'ю': 'yu',   'я': 'ya',
+//
+//         'А': 'A',    'Б': 'B',    'В': 'V',    'Г': 'G',    'Д': 'D',
+//         'Е': 'E',    'Ё': 'E',    'Ж': 'Zh',   'З': 'Z',    'И': 'I',
+//         'Й': 'Y',    'К': 'K',    'Л': 'L',    'М': 'M',    'Н': 'N',
+//         'О': 'O',    'П': 'P',    'Р': 'R',    'С': 'S',    'Т': 'T',
+//         'У': 'U',    'Ф': 'F',    'Х': 'H',    'Ц': 'C',    'Ч': 'Ch',
+//         'Ш': 'Sh',   'Щ': 'Sch',  'Ь': '',     'Ы': 'Y',    'Ъ': '',
+//         'Э': 'E',    'Ю': 'Yu',   'Я': 'Ya'
+//     };
+//
+//     for (let i = 0; i < str.length; ++i ) {
+//         if (converter[str[i]] == undefined){
+//             strEn += str[i];
+//         } else {
+//             strEn += converter[str[i]];
+//         }
+//     }
+//     return strEn;
+// }
+//
+// console.log(translit('люк'));
+
+// Сделайте функцию, которая будет принимать число, а возвращать это число прописью.
+//     Пусть функция работает с числами до 999. Смотрите пример:
+
+// function numbers(num) {
+//     let str = '';
+//     num = String(num);
+//     let converter = {
+//         '1': 'Один',  '4': 'Четыре',  '7': 'Семь',
+//         '2': 'Два',   '5': 'Пять',    '8': 'Восемь',
+//         '3': 'Три',   '6': 'Шесть',   '9': 'Девять',    '10': 'Десять',
+//
+//         '20': 'Двадцать',       '90': 'Девяносто',      '700': 'Семьсот',
+//         '30': 'Тридцать',       '100': 'сто',           '800': 'Восемьсот',
+//         '40': 'Сорок',          '200': 'Двести',        '900': 'Девятьсот',
+//         '50': 'Пятьдесят',      '300': 'Триста',
+//         '60': 'Шестьдесят',     '400': 'Четыреста',
+//         '70': 'Семьдесят',      '500': 'Пятьсот',
+//         '80': 'Восемьдесят',    '600': 'Шестьсот',
+//     };
+//     for (let i = 0; i <= num.length -1; i++) {
+//         if (num.length === 1) {
+//                 if (converter[num[i]] === undefined){
+//                     str += num[i];
+//                 }else {
+//                     str += converter[num[i]];
+//                 }
+//         } else if (num.length === 2) {
+//             if (converter[num[i]] === undefined){
+//                 str += num[i];
+//             }else {
+//                 str += converter[num[i] + i++];
+//                 str += ' ';
+//                 str += converter[num[i]];
+//             }
+//
+//         } else if (num.length === 3) {
+//             if (converter[num[i]] === undefined){
+//                 str += num[i];
+//             }else {
+//                 str += converter[num[i] + i + i++];
+//                 str += ' ';
+//                 str += converter[num[i] + i++ - 1];
+//                 str += ' ';
+//                 str += converter[num[i]];
+//             }
+//
+//         } else {
+//             console.log('no');
 //         }
 //
 //     }
+//     return str;
 // }
-// console.log(isPrime(37)); // должен вывести true
+//
+// console.log(numbers(666));
+
+
+
+
+
+
 
 
 

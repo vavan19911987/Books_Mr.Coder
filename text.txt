@@ -40,3 +40,51 @@ for (let elem of arr) {
     }
 
 }
+
+// Используя созданную вами функцию из предыдущей задачи найдите все пары дружественных чисел в промежутке от 1 до 1000.
+function divider(num) {
+    let arr = [];
+    for (let i = 1; i < num; i++) {
+        if (num % i === 0) {
+            arr.push(i);
+        }
+    }
+    console.log(arr);
+    return arr;
+}
+function sumDivider(sum1) {
+    let sumArr = 0;
+    for (let i = 0; i < sum1.length; i++) {
+        sumArr += sum1[i];
+    }
+    return sumArr;
+}
+function dividerSum(num1,num2) {
+
+    if (num1 === num2) {
+        return 'Дружественные числа';
+    }
+    return 'Не дружественные числа';
+}
+function pairOfFriendly(numFrind) {
+    let arrF = [];
+    for (let i = 1; i <= numFrind ; i++) {
+            arrF.push(i);
+    }
+    return arrF;
+}
+// console.log(pairOfFriendly(15));
+function q(arrQ) {
+    let arr = [];
+    for (let i = 0; i <= arrQ.length; i++) {
+
+        if (arrQ[i] % i === 0) {
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+
+console.log(q(pairOfFriendly(15)))
+
+console.log(dividerSum(sumDivider(divider(15)), sumDivider(divider(15))));
