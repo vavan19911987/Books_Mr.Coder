@@ -1,9 +1,14 @@
-.par3 {
-    color: red;
+#block:not(.active) {
+    display: none;
 }
-.par2 {
-    font-weight: bold;
+#parent {
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    text-align: center;
 }
-.par1 {
-   text-decoration: line-through;
+#block {
+    border: 1px solid green;
+    width: 50px;
+    height: 50px;
 }
