@@ -1,121 +1,180 @@
 'use strict'
 
-// ПОВТОР Рекурсия //
+// ПОВТОР Перебирающие методы с новыми фишками в учебнике//
 
-// Дан массив:
-// С помощью рекурсии выведите элементы этого массива в консоль.
+// Метод map для перебора массива в JavaScript
+
+// Дан массив с числами. Используя метод map извлеките из каждого
+// элемента массива квадратный корень и запишите результат в новый массив.
+
+// let arr = [2, 3, 4, 5, 6, 7, 8, 22, 33, 44, ]
+// let arrResult = []
+// let result = arr.map(function (el) {
+// 	arrResult.push(Math.floor(Math.sqrt(el)))
+// })
+// console.log(arrResult)
+
+// Дан массив со строками. Используя метод map в конец значению каждого элемента массива добавьте символ '!'.
 
 // let arr = ['a', 'b', 'c', 'd'];
-// function func (arr) {
-// 	console.log(arr.shift());
-// 	if (arr.length !== 0) {
-// 		func(arr);
-// 	}
-// }
-// func(arr);
-
-// Дан массив:
-// С помощью рекурсии найдите сумму квадратов элементов этого массива.
-
-// let arr = [1, 2, 3, 4, 5];
 //
-// function getSum (arr) {
-// 	let sum = arr.shift();
-// 	if (arr.length !== 0) {
-// 		sum += getSum(arr);
-// 	}
-// 	return sum;
-// }
-// let result = getSum(arr);
-// console.log(result);
+// let newArr = arr.map(function (el) {
+// 	return el + '!';
+// })
+// console.log(newArr);
 
-// Дан многомерный объект произвольного уровня вложенности, например, такой:
-// С помощью рекурсии выведите все примитивные элементы этого объекта в консоль.
+// Дан массив со строками. Используя метод map переверните символы каждой строки в обратном порядке.
 
-// let obj = { a: 1, b: { c: 2, d: 3, e: 4 }, f: { g: 5, j: 6, k: { l: 7, m: { n: 8, o: 9 } } } }
+// let arr = ['привет', 'как', 'ты', 'сама'];
 //
-// function rekFunc (obj) {
-// 	for (const key in obj) {
-// 		if (typeof obj[key] === 'object') {
-// 			rekFunc(obj[key]);
-// 		} else {
-// 			console.log(obj[key])
-// 		}
-// 	}
-// }
+// let newArr = arr.map(function (el) {
+// 	return el.split('').reverse().join('');
 //
-// rekFunc(obj)
+// })
+// console.log(newArr);
+// Дан следующий массив:
+// Используя метод map преобразуйте этот массив в следующий:
+// 	let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
-// Дан многомерный массив произвольного уровня вложенности, например, такой:
-// Напишите код, который развернет наш многомерный массив в одномерный. Для приведенного выше массива это будет выглядеть вот так:
-// 	[1, 2, 7, 8, 3, 4, 5, 6, 7]
-
-// let arr = [1, [2, 7, 8], [3, 4, [5, [6, 7]]]]
-// let arr2 = [];
-// function getArr (arr) {
-// 	for (const el of arr) {
-// 		if (typeof el === 'object') {
-// 			getArr(el);
-// 		} else {
-// 			arr2.push(el)
-// 		}
+// let arr = ['123', '456', '789'];
+// let newArray = arr.map(function (el,i ,arr) {
+// 	let arrNum = el.split('');
+// 	for (let j = 0; j < arrNum.length; j++) {
+// 		arrNum[j] = Number(arrNum[j]);
 // 	}
-// }
-// getArr(arr);
-// console.log(arr2);
+// 	return arrNum;
+// })
+// console.log(newArray);
 
-// Дан многомерный объект произвольного уровня вложенности, например, такой:
-// С помощью рекурсии найдите сумму элементов этого объекта.
-// let obj = {a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}}
+// Дан массив с числами. Используя метод map запишите в каждый
+// элемент массива значение этого элемента, умноженное на его порядковый номер в массиве.
 //
-// function getObj (obj) {
-// 	let sumKeyObj = 0;
-// 	for (const key in obj) {
-// 		if (typeof obj[key] === 'object') {
-// 			sumKeyObj += getObj(obj[key]);
-// 		} else {
-// 			sumKeyObj += obj[key]
-// 		}
-// 	}
-// 	return sumKeyObj;
-// }
-// let result = getObj(obj)
-// console.log(result);
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+//
+// let newArr = arr.map(function (el,i) {
+// 	return el * i;
+// })
+// console.log(newArr);
 
-// Дан многомерный массив произвольного уровня вложенности, содержащий внутри себя строки, например, такой:
-// С помощью рекурсии слейте элементы этого массива в одну строку:
-// 	'abcdefgjk'
+// Дан массив с числами. Используя метод forEach найдите сумму квадратов элементов этого массива
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let sumArr = 0;
+// arr.forEach(function (el) {
+// 	sumArr += el;
+// })
+// console.log(sumArr);
 
-// let arr = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]];
-// let str = '';
-// function getArr (arr) {
-// 	for (const el of arr) {
-// 		if (typeof el === 'object') {
-// 			getArr(el)
-// 		} else {
-// 			str += el;
-// 		}
-// 	}
-// 	return str;
-// }
-// getArr(arr);
-// console.log(str);
+// Дан массив с числами. Оставьте в нем только положительные числа.
+// let arr = [1, -2, 3, -4, 5, -6, 7, -8, 9];
+// let newArr = arr.filter(el => el >= 0);
+// console.log(newArr);
+// Дан массив с числами. Оставьте в нем только отрицательные числа.
+// let arr = [1, -2, 3, -4, 5, -6, 7, -8, 9];
+// let newArr = arr.filter(el => el < 0);
+// console.log(newArr);
 
-// Дан многомерный массив произвольного уровня вложенности, например, такой:
-// Возведите все элементы-числа этого массива в квадрат.
-// let arr2 = []
-// function getArr (arr) {
-// 	for (const el of arr) {
-// 		if (typeof el === 'object') {
-// 			getArr(el);
-// 		} else {
-// 			arr2.push(el ** 2);
-// 		}
-// 	}
-// 	return arr2;
-// }
-// getArr([1, [2, 7, 8], [3, 4], [5, [6, 7]]]);
-// console.log(arr2)
+// Дан массив с числами. Оставьте в нем только числа, которые больше нуля, но меньше 10.
+// let arr = [0, 1, -2, 30, -4, 5, -6, 70, -8, 9, 10];
+// let newArr = arr.filter(el => el >= 0 && el <= 10);
+// console.log(newArr);
+
+// Дан массив со строками. Оставьте в нем только те строки, длина которых больше 5-ти символов.
+// let arrStr = ['quer', 'qwerty', '12345'];
+// let newArr = arrStr.filter(el => el.length >= 5)
+// console.log(newArr);
+// Дан массив с числами. Оставьте в нем только те числа, произведение которых на их порядковый номер меньше 30.
+// let arr = [0, 28, 29, 30, 4, 5, 6, 70, 8, 9, 10];
+// let sumArr = 0
+// let newArr = arr.filter((el,i) => el * i <= 30)
+// console.log(newArr);
+
+// Дан массив, в нем могут быть обычные элементы и подмассивы, например [1, 2, [3, 4], 5, [6, 7]]. Оставьте в нем только обычные элементы.
+
+// let arr = [1, 2, [3, 4], 5, [6, 7]];
+// let newArr = arr.filter(el => typeof el !== 'object')
+// console.log(newArr);
+
+// Дан массив с числами. Проверьте то, что все элементы в массиве больше нуля.
+
+// let arr = [28, 29, 30, 4, 5, 6, 70, 8, 9, 10];
+// let bidZero = arr.every(el => el > 0);
+// console.log(bidZero);
+// Дан массив с числами. Проверьте то, что для всех элементов произведение их значений на их порядковый номер меньше 30.
+
+// let arr = [28, 29, 4, 5, 6];
+// let newArr = arr.every((el,i) => el * i < 30);
+// console.log(newArr);
+
+// Дан массив с числами. Проверьте то, что в массиве есть хотя бы одно число больше нуля.
+
+// let arr = [-1, -2, -3, 4];
+// let bigZero = arr.some(el => el > 0);
+// console.log(bigZero);
+// Дан массив с числами. Проверьте то, что хотя бы для одного элемента произведение его значения на порядковый номер больше 30.
+// let arr = [ 20, 2, -13, 11,];
+// let newArr = arr.some((el,i) => el * i > 30);
+// console.log(newArr);
+
+// найти элкмент в масиве навный двум символам
+// let arr = ['qwe', 'qwer', 'asdfg', 'qq'];
+// let newArr = arr.find(el => el.length === 5);
+// console.log(newArr);
+// Давайте найдем индекс первого четного элемента массива:
+// let arr = [1, 2, 3, 4, 5]
+// let res = arr.findIndex(el => el % 2 === 0)
+// console.log(res)
+
+// Давайте найдем элемент массива, соответствующий условиям, прописанным в функции:
+//
+// 	let arr = [1, 2, 3, 4, 5];
+//
+// let res = arr.findLast(function(elem) {
+// 	return elem > 0;
+// });
+//
+// console.log(res);
+
+// Давайте найдем индекс положительного числа в массиве:
+
+// let arr = [-12, 13, -14, -15]
+// let res = arr.findLastIndex(function (elem) {
+// 	return elem > 0
+// })
+//
+// console.log(res)
+
+// Найдем сумму элементов массива:
+
+// let arr = [1, 2, 3, 4, 5, 6]
+//
+// let res = arr.reduce(function (sum, elem) {
+// 	return sum + elem
+// },0)
+//
+// console.log(res)
+
+// Давайте сольем двумерный массив в одномерный:
+
+// let arr = [['a', 'b'], ['c'], ['d', 'e']]
+//
+// let res = arr.reduceRight(function (elem1, elem2) {
+// 	return elem1.concat(elem2)
+// }, [])
+//
+// console.log(res)
+// let res2 = arr.reduce((el1,el2) => el1.concat(el2));
+// console.log(res2);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
