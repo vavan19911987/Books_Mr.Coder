@@ -1,48 +1,198 @@
 'use strict'
 
-// ПОВТОР Оператор spread and Оператор rest с новыми фишками//
+// ПОВТОР Деструктуризация с новыми фишками//
 
-// Дан массив:
-// Дана также функция:
-// Найдите с помощью приведенной функции сумму элементов массива.
-// let arr = [1, 2, 3, 4, 5]
+// В следующем коде части массива записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории
+// let arr = ['John', 'Smit', 'development', 'programmer', 2000];
+// let [name, surname, department, position, salary] = arr;
 //
-// function func(num1, num2, num3, num4, num5) {
-// 	return num1 + num2 + num3 + num4 + num5;
+// console.log( surname);
+
+// В следующем коде части массива записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+
+// function func() {
+// 	return ['John', 'Smit', 'development', 'programmer', 2000, 2];
 // }
 //
-// console.log(func(...arr));
+// let [name, surname, department, position, salary] = func();
+//
+// console.log(surname);
 
-// Не запуская код, определите, что выведется в консоль:
+// В следующем коде части массива записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
 
-// 	function func(n1, n2, n3, n4, n5, n6, n7, n8) {
-// 		return (n1 + n2 + n3 + n4) * (n5 + n6 + n7 + n8)
+// let arr = ['John', 'Smit', 'development', 'programmer', 2000];
+// let [,, department, position] = arr;
+// console.log(department);
+
+// В следующем коде части массива записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+
+// let arr = ['John', 'Smit', 'development', 'programmer', 2000];
+// let [name, surname, ...res] = arr;
+// console.log(res);
+// console.log(name);
+
+// В следующем коде части массива записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+
+// let arr = ['John', 'Smit', 'development', 'development-pogrammer'];
+// let [name, surname, department, position = 'programmer'] = arr;
+// console.log(name);
+// console.log(position);
+
+// Модифицируйте полученный выше код так, чтобы при отсутствии в массиве
+// значения для месяца по умолчанию брался текущий месяц,
+// а при отсутствии значения для года - соответственно текущий год.
+
+// function func () {
+// 	return new Date().getFullYear()
+// }
+//
+// let arr = []
+//
+// let [year = func(), month = func(), day = func()] = arr
+// console.log(month)
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+
+// let options = {
+// 	color: 'red',
+// 	width:  400,
+// 	height: 500,
+// };
+// let {color, width, height} = options;
+// console.log(width);
+// console.log(color);
+// console.log(height);
+
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+
+// let options = {
+// 	color: 'red',
+// 	width:  400,
+// 	height: 500,
+// };
+// let {color: c, width: w, height: h} = options;
+// console.log(c);
+// console.log(w);
+// console.log(h);
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+
+// let options = {
+// 	width:  400,
+// 	height: 500,
+// };
+// let {color = 'black', width, height} = options;
+// options['color'] = color;
+// console.log(options)
+
+// В следующем коде части объекта записываются в соответствующие переменные:
+// Переделайте этот код через деструктуризацию согласно изученной теории.
+//
+// let options = {
+// 	width:  400,
+// 	height: 500,
+// };
+// let {color: c = 'black', width, height} = options;
+// console.log(c)
+// console.log(options)
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+
+// 	function func([name, surname, department, position, salary]) {
+// 		console.log(name);
+// 		console.log(surname);
+// 		console.log(department);
+// 		console.log(position);
+// 		console.log(salary);
 // 	}
 //
-// console.log(func(1, ...[2, 3, 4], 5, ...[6], ...[7, 8]))
+// func( ['John', 'Smit', 'development', 'programmer', 2000] );
 
-// Дан массив с числами. Используя Math.min и spread выведите на экран минимальное значение массива.
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
 
-// let arr = [1,2,3,4,5,6,7,-5];
-// let result = Math.min(...arr);
-// console.log(result);
-
-// Напишите функцию, которая будет принимать параметрами произвольное количество чисел и возвращать их среднее арифметическое
-
-// function sumNum (...res) {
-// 	let sum = 0;
-// 	for (const el of res) {
-// 		sum += el / res.length
+// 	function func([name,surname,info]) {
+// 		console.log(name);
+// 		console.log(surname);
+// 		console.log(info);
 // 	}
-// 	return sum
+//
+// func( ['John', 'Smit', 'development', 'programmer', 2000] );
+
+// function func([name,surname,department, position = 'Джуниор']) {
+// 	console.log(name);
+// 	console.log(surname);
+// 	console.log(department);
+// 	console.log(position);
 // }
 //
-// console.log(sumNum(2, 3, 4, 5, 6))
+// func( ['John', 'Smit', 'development'] );
 
-// Давайте сделаем функцию unite, которая параметрами будет принимать произвольное количество массивов и сливать их в один двухмерный.
-// function unite(...arrs) {
-// 	return arrs;
-// }
-// let result = unite([1, 2, 3], [4, 5, 6], [7, 8, 9]);
-// console.log(result);
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+
+// 	function func(department,[name,surname],[year, month, day]) {
+// 		console.log(department);
+// 		console.log(name);
+// 		console.log(surname);
+// 		console.log(year);
+// 		console.log(month);
+// 		console.log(day);
+// 	}
+//
+// func( 'development', ['John', 'Smit'], [2018, 12, 31] );
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+
+// 	function func({color,width,height}) {
+// 		console.log(color);
+// 		console.log(width);
+// 		console.log(height);
+// 	}
+//
+// func( {color: 'red', width: 400, height: 500} );
+
+// Переделайте следующий код через деструктуризацию согласно изученной теории:
+
+// 	function func({color = 'black',width,height}) {
+// 		console.log(color);
+// 		console.log(width);
+// 		console.log(height)
+// 	}
+//
+// func( {width: 400, height: 500} );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
