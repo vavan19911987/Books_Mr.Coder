@@ -1,191 +1,162 @@
 'use strict'
 
-// ПОВТОР Деструктуризация с новыми фишками//
+// ПОВТОР Время с новыми фишками//
 
-// В следующем коде части массива записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории
-// let arr = ['John', 'Smit', 'development', 'programmer', 2000];
-// let [name, surname, department, position, salary] = arr;
+// Выведите на экран текущую дату-время в формате 12:59:59 31.12.2014.
+// Используйте для всех частей даты (кроме года) созданную
+// нами функцию для добавления нуля при необходимости.
+
+// function addZero(num) {
+// 	if (num >= 0 && num <= 9) {
+// 		return '0' + num;
+// 	} else {
+// 		return num;
+// 	}
+// }
+// let date = new Date();
 //
-// console.log( surname);
+// console.log(
+// 	addZero(date.getHours()) + ':' +
+// 	addZero(date.getMinutes()) + ':' +
+// 	addZero(date.getSeconds()) + ':' + ' ' +
+// 	addZero(date.getFullYear()) + '-' +
+// 	addZero(date.getMonth() + 1) + '-' +
+// 	addZero(date.getDate())
+// );
 
-// В следующем коде части массива записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
+// Дана дата в формате год-месяц-день. Преобразуйте эту дату в формат день.месяц.год.
 
-// function func() {
-// 	return ['John', 'Smit', 'development', 'programmer', 2000, 2];
+// let data = '2023.07.01';
+// let newDataFormat = data.split('.').reverse().join('.');
+// console.log(newDataFormat)
+
+// Выведите на экран номер текущего дня недели.
+// let date = new Date();
+// console.log(date.getDay());
+// Определите, является ли текущий день недели выходным или рабочим днем.
+
+// function dayOff(numDay) {
+// 	if (numDay >= 0 && numDay <= 5) {
+// 		console.log('working day');
+// 	} else {
+// 		console.log('Day off');
+// 	}
+// }
+// let date = new Date()
+// dayOff(date.getDay())
+
+// Определите сколько дней осталось до ближайшего воскресенья.
+// let date = new Date()
+// function whenSunday() {
+// 	return 7 - date.getDay();
+// }
+// console.log(whenSunday());
+
+// Пусть дан следующий массив:
+// Выведите с помощью этого массива название текущего месяца.
+// let data = new Date();
+// let mont = data.getMonth() + 1;
+// let months = [
+// 	'дек', 'янв', 'фев', 'мар', 'апр', 'май', 'июн',
+// 	'июл', 'авг', 'сен', 'окт', 'ноя',
+// ]
+// console.log(months[mont]);
+// console.log(mont)
+
+// Узнайте, какой день недели был в ваш день рождения.
+// let date = new Date(1991, 0, 20);
+// let day  = date.getDay();
+// let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+// console.log(days[day]);
+
+// function determiningDayWeek (data) {
+// 	let day  = data.getDay();
+// 	let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+// 	return days[day];
+// }
+// let result = determiningDayWeek(new Date(1991, 0, 20));
+// console.log(result);
+// Выведите на экран количество дней, прошедшее между 1 марта 1988 года и 10 января 2000 года.
+// let now  = new Date(1998, 0, 1);
+// let date = new Date(2000, 0, 1);
+//
+// let diff = date.getTime() - now.getTime();
+// console.log(diff / (1000 * 60 * 60 * 24));
+
+// Выведите на экран количество месяцев, прошедшее между вашим рождением и текущим моментом времени.
+
+// let now  = new Date(1991, 0, 20);
+// let date = new Date();
+//
+// let diff = date.getTime() - now.getTime();
+// console.log(Math.floor(diff / (1000 * 60 * 60 * 24 * 30)));
+
+// Выведите на экран количество миллисекунд, прошедшее между 1 сентября 2000 года и 15 февраля 2010 года.
+
+// let oldData = new Date(2000, 1, 1);
+// let oldData2 = new Date(2010, 1,1);
+// let diff = oldData2 - oldData;
+// console.log(diff);
+// // Модифицируйте предыдущую задачу так, чтобы на экран выводилась разница в днях.
+// console.log(Math.floor(diff / (1000 * 60 * 60 * 24) ) + ' Day');
+//
+// // Модифицируйте предыдущую задачу так, чтобы на экран выводилась разница в месяцах.
+// console.log(Math.floor(diff / (1000 * 60 * 60 * 24 * 30)) + ' Month');
+//
+// // Модифицируйте предыдущую задачу так, чтобы на экран выводилась разница в годах.
+// console.log(Math.floor(diff / (1000 * 60 * 60 * 24 * 30 * 12)) + ' Year');
+
+// Оформите этот способ решения проблемы в виде функции,
+// которая параметрами будет принимать месяц и год и возвращать номер последнего дня этого месяца.
+// function lastMonthNumber (year,month) {
+// 	return new Date(year, month, 0);
+//
+// }
+// let lastDay = lastMonthNumber(2023,2);
+// console.log(lastDay.getDate());
+
+// Сделайте функцию isLeap, которая параметром будет принимать год и возвращать true, если этого год високосный, и false - если нет.
+
+// function isLeap(year) {
+// 	let data = new Date(year, 2,0);
+// 	// if (data.getDate() >= 29) {
+// 	// 	return 'Год високосный';
+// 	// } else {
+// 	// 	return 'Год не високосный';
+// 	// }
+// 	return  data.getDate() ? 'Год високосный' :  'Год не високосный';
+// }
+// let res = isLeap(2023);
+// console.log(res)
+
+// Сделайте функцию checkDate, которая будет выполнять описанную проверку.
+// Пусть функция возвращает true, если дата корректна и false, если нет.
+// Пример работы этой функции для 31 января и 32 января:
+
+// function checkDate (year, month, day) {
+// 	let date = new Date(year, month, day)
+// 	return !!(date.getFullYear() === year && date.getMonth() === month && date.getDate() === day);
 // }
 //
-// let [name, surname, department, position, salary] = func();
+// console.log(checkDate(2025, 0, 31)) // выведет true
+// console.log(checkDate(2025, 0, 32)) // выведет false
+
+// Определите, какой день недели будет 31 декабря текущего года.
+
+// let now = new Date();
+// let date = new Date(now.getFullYear(), 0, 31);
+// console.log(date.getDay());
+
+// let now  = new Date();
+// let year = now.getFullYear();
 //
-// console.log(surname);
-
-// В следующем коде части массива записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-
-// let arr = ['John', 'Smit', 'development', 'programmer', 2000];
-// let [,, department, position] = arr;
-// console.log(department);
-
-// В следующем коде части массива записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-
-// let arr = ['John', 'Smit', 'development', 'programmer', 2000];
-// let [name, surname, ...res] = arr;
-// console.log(res);
-// console.log(name);
-
-// В следующем коде части массива записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-
-// let arr = ['John', 'Smit', 'development', 'development-pogrammer'];
-// let [name, surname, department, position = 'programmer'] = arr;
-// console.log(name);
-// console.log(position);
-
-// Модифицируйте полученный выше код так, чтобы при отсутствии в массиве
-// значения для месяца по умолчанию брался текущий месяц,
-// а при отсутствии значения для года - соответственно текущий год.
-
-// function func () {
-// 	return new Date().getFullYear()
+// for (let month = 0; month <= 11; month++) {
+// 	let date = new Date(year, month, 1);
+//
+// 	if (date.getDay() === 0) {
+// 		console.log(year + '-' + month + '-1');
+// 	}
 // }
-//
-// let arr = []
-//
-// let [year = func(), month = func(), day = func()] = arr
-// console.log(month)
-
-// В следующем коде части объекта записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-
-// let options = {
-// 	color: 'red',
-// 	width:  400,
-// 	height: 500,
-// };
-// let {color, width, height} = options;
-// console.log(width);
-// console.log(color);
-// console.log(height);
-
-
-// В следующем коде части объекта записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-
-// let options = {
-// 	color: 'red',
-// 	width:  400,
-// 	height: 500,
-// };
-// let {color: c, width: w, height: h} = options;
-// console.log(c);
-// console.log(w);
-// console.log(h);
-
-// В следующем коде части объекта записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-
-// let options = {
-// 	width:  400,
-// 	height: 500,
-// };
-// let {color = 'black', width, height} = options;
-// options['color'] = color;
-// console.log(options)
-
-// В следующем коде части объекта записываются в соответствующие переменные:
-// Переделайте этот код через деструктуризацию согласно изученной теории.
-//
-// let options = {
-// 	width:  400,
-// 	height: 500,
-// };
-// let {color: c = 'black', width, height} = options;
-// console.log(c)
-// console.log(options)
-
-// Переделайте следующий код через деструктуризацию согласно изученной теории:
-
-// 	function func([name, surname, department, position, salary]) {
-// 		console.log(name);
-// 		console.log(surname);
-// 		console.log(department);
-// 		console.log(position);
-// 		console.log(salary);
-// 	}
-//
-// func( ['John', 'Smit', 'development', 'programmer', 2000] );
-
-// Переделайте следующий код через деструктуризацию согласно изученной теории:
-
-// 	function func([name,surname,info]) {
-// 		console.log(name);
-// 		console.log(surname);
-// 		console.log(info);
-// 	}
-//
-// func( ['John', 'Smit', 'development', 'programmer', 2000] );
-
-// function func([name,surname,department, position = 'Джуниор']) {
-// 	console.log(name);
-// 	console.log(surname);
-// 	console.log(department);
-// 	console.log(position);
-// }
-//
-// func( ['John', 'Smit', 'development'] );
-
-
-// Переделайте следующий код через деструктуризацию согласно изученной теории:
-
-// 	function func(department,[name,surname],[year, month, day]) {
-// 		console.log(department);
-// 		console.log(name);
-// 		console.log(surname);
-// 		console.log(year);
-// 		console.log(month);
-// 		console.log(day);
-// 	}
-//
-// func( 'development', ['John', 'Smit'], [2018, 12, 31] );
-
-// Переделайте следующий код через деструктуризацию согласно изученной теории:
-
-// 	function func({color,width,height}) {
-// 		console.log(color);
-// 		console.log(width);
-// 		console.log(height);
-// 	}
-//
-// func( {color: 'red', width: 400, height: 500} );
-
-// Переделайте следующий код через деструктуризацию согласно изученной теории:
-
-// 	function func({color = 'black',width,height}) {
-// 		console.log(color);
-// 		console.log(width);
-// 		console.log(height)
-// 	}
-//
-// func( {width: 400, height: 500} );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
