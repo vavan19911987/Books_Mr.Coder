@@ -1,178 +1,154 @@
 'use strict'
 
-// ПОВТОР Формы с новыми фишками//
-
-// Дан текстареа и абзац. По потери фокуса в текстареа запишите его текст в абзац.
-//<textarea id="elem">text</textarea>
+// ПОВТОР Выпадающие списки//
+// Дан селект, абзац и кнопка. По клику на кнопку
+// выведите текст выбранного пункта списка в абзац.
+// <select id="select">
+//     <option>one</option>
+//     <option selected>two</option>
+//     <option>three</option>
+// </select>
 // <p class="par"></p>
+// <input type="submit" id="inp">
 
-// let text = document.querySelector('#elem');
+// let select = document.querySelector('#select');
+// let inpBtn = document.querySelector('#inp');
 // let par = document.querySelector('.par');
-//
-// text.addEventListener('blur', function () {
-// 	par.innerHTML = text.value;
+// inpBtn.addEventListener('click', () => {
+// 	par.innerHTML = select.value;
 // })
 
-// Дан инпут и кнопка. По нажатию на кнопку заблокируйте инпут.
-// 	//<input type="text" class="elem">
-// // <input type="submit" class="btn">
-// let inp = document.querySelector('.elem');
-// let btn = document.querySelector('.btn');
-// btn.addEventListener('click', () => inp.disabled = true)
-// Дан инпут и две кнопки. Пусть нажатие на первую
-// кнопку блокирует инпут, а нажатие на вторую - отблокирует.
-//<input type="text" class="elem">
-// <input type="submit" class="btn">
-// <input type="submit" class="btn2">
-// let inp = document.querySelector('.elem');
-// let btn = document.querySelector('.btn');
-// let btn2 = document.querySelector('.btn2');
-// btn.addEventListener('click', () => inp.disabled = true)
-// btn2.addEventListener('click', () => inp.disabled = false)
-
-// Дан инпут и кнопка. По нажатию на кнопку
-// узнайте, заблокирован инпут или нет
-// //<input type="text" class="elem">
-// // <input type="submit" class="btn">
-// // <input type="submit" class="btn2">
-// // <input type="submit" class="btn3">
-// let inp = document.querySelector('.elem');
-// let btn = document.querySelector('.btn');
-// let btn2 = document.querySelector('.btn2');
-// let btn3 = document.querySelector('.btn3');
-// btn.addEventListener('click', () => inp.disabled = true)
-// btn2.addEventListener('click', () => inp.disabled = false)
-// btn3.addEventListener('click', () => inp.disabled ? console.log('Блокирован') : console.log('Не блокирован'))
-
-// Дан чекбокс и две кнопки.
-// По нажатию на первую кнопку установите чекбокс
-// в отмеченное состояние, а по нажатию на вторую - в неотмеченное.
-// <input type="checkbox" class="elem">
-// <input type="submit" class="btn" value="Подписаться">
-// <input type="submit" class="btn2" value="Игнорирлвать">
-// let check = document.querySelector('.elem');
-// let btn1 = document.querySelector('.btn');
-// let btn2 = document.querySelector('.btn2');
-// btn1.addEventListener('click', () => check.checked = true)
-// btn2.addEventListener('click', () => check.checked = false)
-
-// Дан чекбокс, кнопка и абзац.
-// По нажатию на кнопку, если чекбокс отмечен,
-// выведите в абзац слово 'привет', а если чекбокс не отмечен, то слово 'пока'.
-// let check = document.querySelector('.elem');
-// let btn1 = document.querySelector('.btn');
-// let btn2 = document.querySelector('.btn2');
+// Сделайте выпадающий список годов от 2020 до 2030.
+// При выборе какого-нибудь пункта списка выведите сообщение
+// о том, високосный этот год или нет.
+// <select id="select">
+//     <option>2020</option> // високосный
+//     <option>2021</option>
+//     <option>2022</option>
+//     <option>2023</option>
+//     <option>2024</option> // високосный
+//     <option>2025</option>
+//     <option>2026</option>
+//     <option>2027</option>
+//     <option>2028</option> // високосный
+//     <option>2028</option>
+//     <option>2030</option>
+// </select>
+// <p class="par"></p>
+// <input type="submit" id="inp" value="Високосный год?">
+//
+// function isLeap (year) {
+// 	let data = new Date(year, 2, 0)
+// 	return data.getDate() >= 29 ? 'Год високосный' : 'Год не високосный'
+// }
+// let inpBtn = document.querySelector('#inp');
 // let par = document.querySelector('.par');
-// btn1.addEventListener('click', function (func) {
-// 	check.checked = true;
-// 	if (check.checked) {
-// 		par.textContent = 'Привет'
-// 	}
-// })
-// btn2.addEventListener('click', function (func) {
-// 	check.checked = false;
-// 	if (!check.checked) {
-// 		par.textContent = 'Пока'
-// 	}
+// let select = document.querySelector('#select');
+// inpBtn.addEventListener('click', () => {
+// 	par.innerHTML = isLeap(select.value);
 // })
 
-// Дан чекбокс и кнопка. Сделайте так,
-// чтобы каждый клик по кнопке приводил к смене состояния чекбокса.
-// <input type="checkbox" class="elem">
-// <input type="submit" class="btn" value="Подписаться">
 
-// let check = document.querySelector('.elem');
-// let btn = document.querySelector('.btn')
-// btn.addEventListener('click',  () => check.checked = !check.checked)
+// Сделайте выпадающий список с названиями дней недели.
+// В качестве атрибутов value пунктов списка добавьте
+// номера дней недели от 1 до 7. По изменению списка выведите
+// на экран сообщение о том, выбран выходной день или рабочий.
+// <select id="select">
+// 	<option value="1">Понедельник</option>
+// <option value="2">Вторник</option>
+// <option value="3">Среда</option>
+// <option value="4">Четверг</option>
+// <option value="5">Пятница</option>
+// <option value="6">Суббота</option>
+// <option value="7">Воскресенье</option>
+// </select>
+// <p id="par"></p>
 
-// let radios = document.querySelectorAll('input[type="radio"]');
-// let button = document.querySelector('#button');
+// let select = document.querySelector('#select');
+// let par = document.querySelector('#par');
+// function func() {
+// 	select.addEventListener('change', () => {
+// 		par.innerHTML = select.value
+// 	})
+// }
+// func();
+
+
+// Дан инпут и селект. В инпут вводится какое-то число.
+// По потери фокуса сделайте выделенным пункт списка,
+// номер которого равен значению из инпута.
+// <select id="select">
+// 	<option value="1">Monday</option>
+// <option value="2">Tuesday</option>
+// <option value="3">Wednesday</option>
+// <option value="4">Thursday</option>
+// <option value="5">Friday</option>
+// <option value="6">Saturday</option>
+// <option value="7">Sunday</option>
+// </select>
+// <input type="text" id="inp">
+
+// let select = document.querySelector('#select');
+// let inp = document.querySelector('#inp')
+// let opt = document.querySelectorAll('#select option');
 //
-// button.addEventListener('click', function() {
-// 	for (let radio of radios) {
-// 		if (radio.checked) {
-// 			console.log(radio.value);
+// inp.addEventListener('blur', () => {
+// 	select.selectedIndex  = inp.value ;
+// })
+
+// Переберите все пункты списка циклом и в
+// конец текста каждого пункта добавьте значение его атрибута value.
+// <select id="select">
+//     <option value="1">Monday</option>
+//     <option value="2">Tuesday</option>
+//     <option value="3">Wednesday</option>
+//     <option value="4">Thursday</option>
+//     <option value="5">Friday</option>
+//     <option value="6">Saturday</option>
+//     <option value="7">Sunday</option>
+// </select>
+
+// let select = document.querySelector('#select');
+// for (let i = 0; i < select.length; i++) {
+// 	select[i].textContent = select[i].textContent +  ' ' + select[i].value
+// }
+// Переберите пункты списка циклом и для
+// выбранного пункта в конец текста добавьте восклицательный
+// знак, а для невыбранных пунктов - вопросительный.
+// <select id="select">
+//     <option value="1">Monday</option>
+//     <option value="2">Tuesday</option>
+//     <option value="3">Wednesday</option>
+//     <option value="4">Thursday</option>
+//     <option value="5">Friday</option>
+//     <option value="6">Saturday</option>
+//     <option value="7">Sunday</option>
+// </select>
+
+// let select = document.querySelector('#select');
+// select.addEventListener('change', () => {
+// 	for (let i = 0; i < select.length; i++) {
+// 		if (select[i].selected) {
+// 			select[i].textContent = select[i].textContent + '  ' + '!';
+// 		} else if (!select[i].selected) {
+// 			select[i].textContent = select[i].textContent + '  ' + '?';
+// 		} else {
+// 			select[i].textContent = select.textContent
 // 		}
-// 	}
-// });
-
-// let elem = document.querySelector('#elem');
-//
-// elem.addEventListener('input', function() {
-// 	console.log(this.value);
-// });
-
-// Даны два инпута. Сделайте так, чтобы
-// после ввода двух символов фокус ввода
-// переходил ко второму инпуту, а после ввода
-// двух символов в этот инпут - фокус из него убирался.
-// <input id="elem">
-// <input id="elem2">
-
-// let inp1 = document.querySelector('#elem')
-// let inp2 = document.querySelector('#elem2')
-// inp1.addEventListener('input', () => {
-// 	if (inp1.value.length >= 2) {
-// 		inp2.focus();
-// 	}
-// })
-// inp2.addEventListener('input', () => {
-// 	if (inp2.value.length >= 2 ) {
-// 		inp2.blur();
 // 	}
 // })
 
 // По потери фокуса текст из textarea должен записаться в див:
 
-// 	<textarea></textarea>
+// <textarea></textarea>
 // <div></div>
+
 // let textarea = document.querySelector('textarea');
 // let div = document.querySelector('div');
 //
 // textarea.addEventListener('blur', function() {
-// 	div.textContent = textarea.value
+// 	div.textContent = textarea.value;
 // });
-
-// По клику на кнопку в див должно записаться или одно, или другое значение:
-//<input type="checkbox">
-//<div></div>
-//<button>button</button>
-// let checkbox = document.querySelector('#checkbox')
-// let button = document.querySelector('button')
-// let div = document.querySelector('div')
-// button.addEventListener('click', () => {
-// 	checkbox.checked = !checkbox.checked
-// 	checkbox.checked ? div.innerHTML = 'Привет' : div.innerHTML = 'Пока'
-// })
-
-// По клику на кнопку, если чекбокс отмечен,
-// то должно вывестись одно значение, а если не отмечен - другое:
-//
-// <input type="checkbox">
-// 	<button>button</button>
-// let checkbox = document.querySelector('[type="checkbox"]')
-// let button = document.querySelector('button')
-//
-// button.addEventListener('click', function () {
-// 	if (checkbox.checked === true) {
-// 		console.log('+++')
-// 	} else {
-// 		console.log('---')
-// 	}
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
