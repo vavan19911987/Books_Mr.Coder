@@ -1,154 +1,346 @@
 'use strict'
 
-// ПОВТОР Выпадающие списки//
-// Дан селект, абзац и кнопка. По клику на кнопку
-// выведите текст выбранного пункта списка в абзац.
-// <select id="select">
-//     <option>one</option>
-//     <option selected>two</option>
-//     <option>three</option>
-// </select>
-// <p class="par"></p>
-// <input type="submit" id="inp">
+// ПОВТОР Объект Event//
 
-// let select = document.querySelector('#select');
-// let inpBtn = document.querySelector('#inp');
-// let par = document.querySelector('.par');
-// inpBtn.addEventListener('click', () => {
-// 	par.innerHTML = select.value;
-// })
-
-// Сделайте выпадающий список годов от 2020 до 2030.
-// При выборе какого-нибудь пункта списка выведите сообщение
-// о том, високосный этот год или нет.
-// <select id="select">
-//     <option>2020</option> // високосный
-//     <option>2021</option>
-//     <option>2022</option>
-//     <option>2023</option>
-//     <option>2024</option> // високосный
-//     <option>2025</option>
-//     <option>2026</option>
-//     <option>2027</option>
-//     <option>2028</option> // високосный
-//     <option>2028</option>
-//     <option>2030</option>
-// </select>
-// <p class="par"></p>
-// <input type="submit" id="inp" value="Високосный год?">
+// let elem = document.querySelector('#elem');
 //
-// function isLeap (year) {
-// 	let data = new Date(year, 2, 0)
-// 	return data.getDate() >= 29 ? 'Год високосный' : 'Год не високосный'
-// }
-// let inpBtn = document.querySelector('#inp');
-// let par = document.querySelector('.par');
-// let select = document.querySelector('#select');
-// inpBtn.addEventListener('click', () => {
-// 	par.innerHTML = isLeap(select.value);
-// })
+// elem.addEventListener('click', function(event) {
+// 	console.log(event)
+// });
 
-
-// Сделайте выпадающий список с названиями дней недели.
-// В качестве атрибутов value пунктов списка добавьте
-// номера дней недели от 1 до 7. По изменению списка выведите
-// на экран сообщение о том, выбран выходной день или рабочий.
-// <select id="select">
-// 	<option value="1">Понедельник</option>
-// <option value="2">Вторник</option>
-// <option value="3">Среда</option>
-// <option value="4">Четверг</option>
-// <option value="5">Пятница</option>
-// <option value="6">Суббота</option>
-// <option value="7">Воскресенье</option>
-// </select>
-// <p id="par"></p>
-
-// let select = document.querySelector('#select');
-// let par = document.querySelector('#par');
-// function func() {
-// 	select.addEventListener('change', () => {
-// 		par.innerHTML = select.value
-// 	})
-// }
-// func();
-
-
-// Дан инпут и селект. В инпут вводится какое-то число.
-// По потери фокуса сделайте выделенным пункт списка,
-// номер которого равен значению из инпута.
-// <select id="select">
-// 	<option value="1">Monday</option>
-// <option value="2">Tuesday</option>
-// <option value="3">Wednesday</option>
-// <option value="4">Thursday</option>
-// <option value="5">Friday</option>
-// <option value="6">Saturday</option>
-// <option value="7">Sunday</option>
-// </select>
-// <input type="text" id="inp">
-
-// let select = document.querySelector('#select');
-// let inp = document.querySelector('#inp')
-// let opt = document.querySelectorAll('#select option');
+// Сделайте так, чтобы при движении мышки по странице,
+// отображались координаты курсора,
+// подобно тому, как это сделано в следующем образце:
+// let elem = document.getElementById('elem');
 //
-// inp.addEventListener('blur', () => {
-// 	select.selectedIndex  = inp.value ;
-// })
+// document.addEventListener('mousemove', function(event) {
+// 	elem.innerHTML = event.clientX + ' : ' + event.clientY;
+// });
 
-// Переберите все пункты списка циклом и в
-// конец текста каждого пункта добавьте значение его атрибута value.
-// <select id="select">
-//     <option value="1">Monday</option>
-//     <option value="2">Tuesday</option>
-//     <option value="3">Wednesday</option>
-//     <option value="4">Thursday</option>
-//     <option value="5">Friday</option>
-//     <option value="6">Saturday</option>
-//     <option value="7">Sunday</option>
-// </select>
+// В следующем коде в двум событиям привязан один и тот же обработчик:
+// Допишите код функции func так, чтобы при клике на элемент
+// этот элемент красился в зеленый цвет, а при двойном клике - в красный.
+// <button id="elem">text</button>
 
-// let select = document.querySelector('#select');
-// for (let i = 0; i < select.length; i++) {
-// 	select[i].textContent = select[i].textContent +  ' ' + select[i].value
+// let elem = document.querySelector('#elem')
+// elem.addEventListener('click', func)
+// elem.addEventListener('dblclick', func)
+// function func (event) {
+// 	if (event.type === 'click') {
+// 		this.style.background = 'green'
+// 	} else if (event.type === 'dblclick') {
+// 		this.style.background = 'red'
+// 	}
 // }
-// Переберите пункты списка циклом и для
-// выбранного пункта в конец текста добавьте восклицательный
-// знак, а для невыбранных пунктов - вопросительный.
-// <select id="select">
-//     <option value="1">Monday</option>
-//     <option value="2">Tuesday</option>
-//     <option value="3">Wednesday</option>
-//     <option value="4">Thursday</option>
-//     <option value="5">Friday</option>
-//     <option value="6">Saturday</option>
-//     <option value="7">Sunday</option>
-// </select>
+//
+// let elem = document.querySelector('#elem');
+//
+// elem.addEventListener('click', function(event) {
+// 	console.log(event.target); // выведет наш абзац
+// 	console.log(this);         // выведет наш див
+// });
 
-// let select = document.querySelector('#select');
-// select.addEventListener('change', () => {
-// 	for (let i = 0; i < select.length; i++) {
-// 		if (select[i].selected) {
-// 			select[i].textContent = select[i].textContent + '  ' + '!';
-// 		} else if (!select[i].selected) {
-// 			select[i].textContent = select[i].textContent + '  ' + '?';
-// 		} else {
-// 			select[i].textContent = select.textContent
-// 		}
+// Пусть у вас есть список ul с тегами li:
+//
+// 	ul {
+// 	padding: 30px;
+// 	border: 1px solid red;
+// }
+// li {
+// 	list-style-type: none;
+// 	margin-bottom: 20px;
+// 	border: 1px dashed black;
+// }
+// <ul id="elem">
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// 	<li>text</li>
+// </ul>
+
+// Привяжите к тегу ul обработчик клика.
+// В этом обработчике проверяйте с помощью свойства tagName,
+// по какому тегу был клик. Если клик был по тегу li - добавьте в конец
+// текста этого тега восклицательный знак. А если клик был по тегу ul -
+// выведите информацию об этом в консоль.
+
+// let list = document.querySelector('#elem');
+// list.addEventListener('click', (event) => {
+// 	if (event.target.tagName === 'LI') {
+// 		event.target.textContent = event.target.textContent + ' ' + '!'
+// 	} else if (event.target.tagName === 'UL') {
+// 		console.log('this is click no " LI " this is click " UL "')
 // 	}
 // })
 
-// По потери фокуса текст из textarea должен записаться в див:
+// let elem = document.querySelector('input');
+// elem.addEventListener('keypress', function(event) {
+// 	console.log(event.key);
+// 	if (event.key === 'q') {
+// 		console.log('this is "Q"')
+// 	}
+// });
 
-// <textarea></textarea>
-// <div></div>
+// elem.addEventListener('keypress', function(event) {
+// 	console.log(event.code);
+// 	console.log(event.key);
+// });
 
-// let textarea = document.querySelector('textarea');
+// Дан абзац и инпут. В него вводится текст
+// и нажимается клавиша Enter. Сделайте так, чтобы
+// в этот момент введенный текст попадал в абзац под инпутом,
+// а содержимое инпута очищалось.
+// <input type="text" id="inp">
+// <p id="pap"></p>
+
+// let inp = document.querySelector('#inp');
+// let par = document.querySelector('#pap');
+// inp.addEventListener('keypress', (e) => {
+// 	if (e.key === 'Enter') {
+// 		par.innerHTML =  inp.value;
+// 	}
+// })
+
+// Самостоятельно напишите код,
+// который будет демонстрировать всплытие событий.
+// Проверьте на нем всплытие различных типов событий.
+// <div class="block1">
+//     <div class="block2">
+//         <div class="block3"></div>
+//     </div>
+// </div>
+// .block1 {
+//     width: 300px;
+//     height: 300px;
+//     background: #0e751f;
+// }
+// .block2 {
+//     width: 230px;
+//     height: 230px;
+//     background: #0f128a;
+// }
+// .block3 {
+//     width: 130px;
+//     height: 130px;
+//     background: red;
+// }
+// .block1,.block2,.block3 {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// let el1 = document.querySelector('.block1')
+// let el2 = document.querySelector('.block2')
+// let el3 = document.querySelector('.block3')
+// el1.addEventListener('click', () => {
+// 	alert('green');
+// })
+// el2.addEventListener('click', () => {
+// 	alert('blue');
+// })
+// el3.addEventListener('click', () => {
+// 	alert('red');
+// })
+
+///
+
 // let div = document.querySelector('div');
 //
-// textarea.addEventListener('blur', function() {
-// 	div.textContent = textarea.value;
+// div.addEventListener('click', function(event) {
+// 	if (event.target.matches('div')) {
+// 		console.log('клик именно по диву');
+// 	}
+// 	if (event.target.matches('p')) {
+// 		console.log('клик именно по абзацу');
+// 	}
 // });
+
+// Даны следующие элементы:
+//
+// 	<div>
+// 		<ul>
+// 			<li>1</li>
+// 			<li>2</li>
+// 			<li>3</li>
+// 		</ul>
+// 	</div>
+// div, ul, li {
+// 	padding: 20px;
+// }
+//
+// div {
+// 	border: 1px solid red;
+// }
+// ul {
+// 	border: 1px solid orange;
+// }
+// li {
+// 	border: 1px solid green;
+// }
+// Навешайте на див обработчик клика.
+// В этом обработчике определите,
+// в каком из тегов сработало событие.
+
+// let getDiv = document.querySelector('#div')
+// getDiv.addEventListener('click', (e) => {
+// 	if (e.target.matches('div')) {
+// 		console.log('this is DIV')
+// 	} else if (e.target.matches('ul')) {
+// 		console.log('this is UL')
+// 	} else if (e.target.matches('li')) {
+// 		e.target.textContent = e.target.textContent + ' ' + '!'
+// 		console.log('this is LI')
+// 	}
+// })
+
+/////
+// let el1 = document.querySelector('.block1')
+// let el2 = document.querySelector('.block2')
+// let el3 = document.querySelector('.block3')
+// el1.addEventListener('click', () => {
+// 	alert('green');
+// })
+// el2.addEventListener('click', (e) => {
+// 	e.stopImmediatePropagation()
+// 	alert('blue Первый');
+// })
+// el2.addEventListener('click', (e) => {
+// 	e.stopPropagation()
+// 	alert('blue Второй');
+// })
+// el3.addEventListener('click', (e) => {
+// 	alert('red');
+// })
+
+// <div id="parent">
+//     <button>click me</button>
+//     <div id="block">
+//         text
+//     </div>
+// </div>
+
+// Самостоятельно реализуйте корректную работу описанной задачи.
+
+// let parent = document.querySelector('#parent');
+// let button = document.querySelector('button');
+// let block  = document.querySelector('#block');
+//
+// button.addEventListener('click', function(e) {
+// 	e.stopImmediatePropagation()
+// 	block.classList.add('active');
+// });
+// parent.addEventListener('click', function() {
+// 	block.classList.remove('active');
+// });
+
+
+// Погружение событий в JavaScript
+// let elem1 = document.querySelector('.block1')
+// let elem2 = document.querySelector('.block2')
+// let elem3 = document.querySelector('.block3')
+//
+// elem1.addEventListener('click', function () {
+// 	console.log('зеленый - погружение')
+// 	alert('зеленый - погружение')
+// }, true)
+// elem1.addEventListener('click', function () {
+// 	console.log('зеленый - всплытие')
+// 	alert('зеленый - всплытие')
+// }, false)
+//
+// elem2.addEventListener('click', function (e) {
+// 	console.log('голубой - погружение')
+// 	alert('голубой - погружение')
+// }, true)
+// elem2.addEventListener('click', function () {
+// 	console.log('голубой - всплытие')
+// 	alert('голубой - всплытие')
+// }, false)
+//
+// elem3.addEventListener('click', function (e) {
+// 	e.stopImmediatePropagation()
+// 	console.log('красный - погружение')
+// 	alert('красный - погружение')
+// }, true)
+// elem3.addEventListener('click', function () {
+// 	console.log('красный- всплытие')
+// 	alert('красный- всплытие')
+// }, false)
+
+
+// Навешивание обработчиков на новые элементы в JavaScript
+// let button = document.querySelector('button');
+// let list   = document.querySelector('ul');
+// let items  = list.querySelectorAll('li');
+// function handler() {
+// 	this.textContent = this.textContent
+// 		+ '!';
+// }
+// for (let item of items) {
+// 	item.addEventListener('click', handler);
+// }
+// button.addEventListener('click', function() {
+// 	let item = document.createElement('li');
+// 	item.textContent = 'item';
+// 	item.addEventListener('click', handler);
+// 	list.appendChild(item);
+// });
+
+// Делегирование событий в JavaScript
+// let button = document.querySelector('button');
+// let list   = document.querySelector('ul');
+// let items  = list.querySelectorAll('li');
+// button.addEventListener('click', function() {
+// 	let item = document.createElement('li');
+// 	item.textContent = 'item';
+// 	list.appendChild(item);
+// });
+// list.addEventListener('click', function func(event) {
+// 	event.target.textContent = event.target.textContent
+// 		+ '!';
+// });
+
+// Универсальное делегирование событий в JavaScript
+// <ul>
+// <li>item <i>italic</i> item</li>
+// <li>item <i>italic</i> item</li>
+// <li>item <i>italic</i> item</li>
+// <li>item <i>italic</i> item</li>
+// <li>item <i>italic</i> item</li>
+// </ul>
+
+// let list = document.querySelector('ul')
+// list.addEventListener('click', function(event) {
+// 	let li = event.target.closest('li');
+//
+// 	if (li) {
+// 		li.textContent = li.textContent
+// 			+ '!';
+// 	}
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
