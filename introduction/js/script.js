@@ -1,310 +1,158 @@
 'use strict'
 
-// ПОВТОР Таймеры//
+// ПОВТОР Манипулирование элементами с новыми фишками //
 
-// Запустите таймер, который каждые 3 секунды будет что-нибудь выводить в консоль.
-// setInterval(function() {
-// 	console.log('1');
-// }, 3000);
+// Дан ol:
+// Вставьте ему в конец li с текстом 'item'.
+// <ol id="elem"></ol>
+// let list = document.querySelector('#elem');
+// let elemLi = document.createElement('li')
+// elemLi.innerHTML = 'item';
+// list.appendChild(elemLi);
 
-// Пусть дана переменная, в которой изначально хранится число 100.
-// Запустите таймер, который каждую секунду будет уменьшать значение
-// этой переменной на 1 и выводить это значение в консоль.
+// Дан ol и кнопка:
+// Сделайте так, чтобы по клику на кнопку
+// в конец списка добавлялся li с текстом 'item'.
+// 	<ol id="elem"></ol>
+// <button id="button">click me</button>
+// let list = document.querySelector('#elem');
+// let btn = document.querySelector('#button');
+// let elemLi = document.createElement('li')
+// elemLi.innerHTML = 'item';
+// btn.addEventListener('click', () => {
+// 	list.append(elemLi)
+// })
+// Дан ol и кнопка. Сделайте так, чтобы по клику на
+// кнопку в конец ol добавлялся тег li. Сделайте так,
+// чтобы по клику на любой из добавленных li в конец его
+// текста записывался восклицательный знак.
+// <ul>
+//     <li>1</li>
+//     <li>2</li>
+//     <li>3</li>
+//     <li>4</li>
+//     <li>5</li>
+// </ul>
+// <!--<button id="button">click me</button>-->
 
-// let i = 100;
-// setInterval(function () {
-// 	while (i >= 0) {
-// 		console.log(i--)
+// let listUL = document.querySelector('ul');
+// let btn = document.querySelector('#button')
+//
+// btn.addEventListener('click', () => {
+// 	let nowLi = document.createElement('li');
+// 	nowLi.innerHTML = '6';
+// 	listUL.appendChild(nowLi);
+// })
+// listUL.addEventListener('click', (e) => {
+// 	e.target.innerHTML = e.target.innerHTML + ' !'
+//
+// })
+
+// Дан див. Запустите цикл, который добавит в
+// наш див 5 инпутов. Пусть дан также абзац.
+// Сделайте так, чтобы каждый из новых инпутов по
+// потери фокуса записывал свой текст в абзац.
+// <div class="elem"></div>
+// <p id="parent"></p>
+
+// let elem = document.querySelector('.elem')
+// let btn = document.querySelector('#button')
+// let par = document.querySelector('#parent')
+//
+// for (let i = 1; i < 5; i++) {
+// 	let inp = document.createElement('input')
+// 	elem.appendChild(inp)
+// 	inp.addEventListener('blur', (e) => {
+// 		par.textContent += e.target.value + ' '
+// 	})
+// }
+
+// Дан следующий код:
+// Сделайте так, чтобы любая li удалялась по клику на нее.
+// <ul>
+// 		<li>1</li>
+// 		<li>2</li>
+// 		<li>3</li>
+// 	</ul>
+
+// let listUl = document.querySelectorAll('ul li');
+// for (let el of listUl) {
+// 	console.log(el)
+// 	el.addEventListener('click', () => {
+// 		el.remove();
+// 	})
+// }
+
+// создаем таблицу:
+// <table id="table"></table>
+// let tab = document.querySelector('#table');
+//
+// for (let i = 0; i <= 3; i++) {
+// 	let tr = document.createElement('tr');
+// 	tab.style.border = '1px solid green'
+// 	for (let j = 1; j <= 9; j++) {
+// 		let td = document.createElement('td');
+// 		td.textContent = j;
+// 		td.style.border = '1px solid green'
+// 		td.style.width = '20px'
+// 		td.style.textAlign= 'center'
+// 		tr.append(td);
 // 	}
-// },1000)
-
-// Пусть дана переменная, в которой изначально
-// хранится число 10. Запустите таймер, который каждую
-// секунду будет уменьшать значение этой переменной на 1 и выводить
-// это значение в консоль. Как только значение переменной достигнет нуля
-// - остановите таймер.
-// let i = 100;
-// let timeId = setInterval(function () {
-// 	console.log(i--)
-// 	if (i <= 0) {
-// 		clearInterval(timeId)
-// 	}
-// },500)
-
-// Сделайте кнопку, по нажатию на которую в консол
-// ь будет выводится обратный отсчет, начиная с 100.
-// <input type="submit" name="Start" id="start">
-// <p class="par"></p>
-
-// let start = document.querySelector('#start');
-// let par = document.querySelector('.par');
-//
-// start.addEventListener('click', function starts() {
-// 	let testTime = 100;
-// 	let test = setInterval(() => {
-// 		par.innerHTML = String(testTime--);
-// 		if (testTime <= 0) {
-// 			clearInterval(test)
-// 		}
-// 	},200)
-// 	this.removeEventListener('click', starts);
-// })
-
-// let start = document.querySelector('#start')
-// let stop = document.querySelector('#stop');
-// let timerId;
-// start.addEventListener('click', function () {
-// 	let i = 0
-//
-// 	timerId = setInterval(function () {
-// 		console.log('!')
-// 	}, 1000)
-// })
-// // Останавливаем таймер:
-// stop.addEventListener('click', function () {
-// 	clearInterval(timerId)
-// })
-
-// Пусть дана переменная, в которой изначально хранится число 100.
-// Даны также две кнопки. По нажатию на первую кнопку запустите таймер,
-// который каждую секунду будет уменьшать значение переменной на 1 и выводить
-// новое значение в консоль. Как только значение переменной достигнет нуля -
-// остановите таймер.
-// По нажатию на вторую кнопку остановите таймер.
-// Также остановите таймер, если вторая кнопка не была нажата,
-// но значение переменной достигло нуля.
-//<button id="start">start</button>
-// <button id="stop">stop</button>
-// <p class="par"></p>
-
-// let setTime
-// let num = 100
-//
-// let start = document.querySelector('#start')
-// start.addEventListener('click', starts)
-//
-// function starts () {
-// 	setTime = setInterval(() => {
-// 		let par = document.querySelector('.par')
-// 		par.innerHTML = String(num--)
-// 		if (num <= -1) {
-// 			clearInterval(setTime)
-// 		}
-// 	}, 500)
-// 	this.removeEventListener('click', starts)
-// }
-//
-// let stop = document.querySelector('#stop')
-// stop.addEventListener('click', () => {
-// 	clearInterval(setTime)
-// 	start.addEventListener('click', starts)
-// })
-
-// Некоторый программист написал код, который по нажатию на кнопку запускает таймер, выводящий в консоль текущий момент времени:
-
-// <input type="submit" id="start"
-// 	   value="start">
-// 	<input type="submit" id="stop"
-// 		   value="stop">
-// <!--<p class="par"></p>-->
-// let start = document.querySelector('#start')
-// let stop = document.querySelector('#stop')
-// let par = document.querySelector('.par')
-// let timerId
-// start.addEventListener('click', function () {
-// 	timerId = setInterval(function () {
-// 		let date = new Date
-// 		par.innerHTML = date.getHours() + ':' + date.getMinutes() + ':' +
-// 			date.getSeconds()
-// 	}, 1000)
-// })
-//
-// stop.addEventListener('click', function () {
-// 	clearInterval(timerId)
-// })
-// После запуска кода, однако, оказалось, что кнопка
-// остановки не работает. Исправьте ошибку автора кода.
-
-// Пусть дан такой код:
-
-// <input type="button" id="elem" value="1">
-
-// Автор кода хотел, чтобы по нажатию на кнопку,
-// значение этой кнопки каждую секунду увеличивалось на 1.
-// Однако, по нажатию на кнопку вообще ничего не происходит.
-// Исправьте ошибку автора кода. Напишите текст, в котором вы дадите
-// объяснение автору кода, почему возникла его ошибка.
-
-// let elem = document.querySelector('#elem')
-//
-// elem.addEventListener('click', function () {
-// 	let self = this
-// 	setInterval(function () {
-// 		self.value = Number(elem.value) + 1
-// 	}, 1000)
-// })
-
-// Дана кнопка. Дан абзац, текстом которого является число.
-// По нажатию на кнопку запустите таймер, который каждую
-// секунду будет увеличивать текст абзаца на 1.
-//<p class="par"></p>
-// <button id="start">start</button>
-// let par = document.querySelector('.par');
-// let btn = document.querySelector('#start');
-// btn.addEventListener('click', function () {
-// 	let i = 0;
-// 	let setInt = setInterval(() => {
-// 		par.innerHTML = String(i++)
-// 		if (i >= 11) {
-// 			clearInterval(setInt);
-// 		}
-// 	}, 1000)
-// })
-
-// Дана кнопка. Дан абзац, текстом которого является число,
-// например, 10. По нажатию на кнопку запустите таймер,
-// который каждую секунду будет уменьшать текст абзаца на 1.
-// Как только значение абзаца станет равно нулю - остановите таймер.
-//<p class="par"></p>
-// <button id="start">start</button>
-// let par = document.querySelector('.par');
-// let btn = document.querySelector('#start');
-// btn.addEventListener('click', function noClick() {
-// 	let i = 10;
-// 	let setInt = setInterval(() => {
-// 		par.innerHTML = String(i--)
-// 		if (i <= -1) {
-// 			clearInterval(setInt);
-// 		}
-// 	}, 1000)
-// 	this.removeEventListener('click', noClick);
-// })
-
-// Дан инпут с числом. Сделайте так, чтобы каждую секунду
-// в нем появлялся квадрат того числа, которое в нем записано.
-// <input type="text" id="test" value="2">
-// let inp = document.querySelector('#test');
-// inp.addEventListener('focus', function noFocus() {
-// 	let self = this
-// 	let setInt = setInterval(() => {
-// 		self.value = self.value ** 2;
-// 		if (self.value >= 1000) {
-// 			clearInterval(setInt);
-// 		}
-// 	}, 1000)
-// 	this.removeEventListener('focus', noFocus)
-// })
-
-// Дан инпут. В него вводится число. По потери фокуса сделайте
-// так, чтобы в абзаце ниже начал тикать обратный отсчет,
-// начиная с введенного числа. Когда отсчет дойдет до нуля -
-// он должен закончится.
-// <input type="text" id="test" value="2">
-// <p class="par"></p>
-// let inp = document.querySelector('#test')
-// let par = document.querySelector('.par')
-// inp.addEventListener('blur', stopFunc)
-// inp.addEventListener('focus', () => inp.value = '')
-//
-// function stopFunc (param) {
-// 	let self = this
-// 	let setInt = setInterval(() => {
-// 		par.innerHTML = String(self.value--)
-// 		if (self.value <= -1) {
-// 			clearInterval(setInt)
-// 		}
-// 	}, 1000)
-//
+// 	tab.append(tr);
 // }
 
-// Дан инпут, кнопка и абзац. В инпут вводится какое-то число.
-// По нажатию на кнопку запишите введенное число в текст абзаца и
-// запустите обратный отсчет в абзаце: пусть каждую секунду число в
-// абзаце уменьшается на единицу, пока не дойдет до нуля.
-// <p class="par"></p>
-// <input type="text" id="test" value="Введите число">
-// <input type="button" id="elem" value="start">
+// Дан элемент #elem:
+// Вставьте перед этим элементом элемент с текстом 'new'.
+// <ul id="parent">
+// 		<li>text</li>
+// 		<li>text</li>
+// 		<li id="elem">text</li>
+// 		<li>text</li>
+// 		<li>text</li>
+// 	</ul>
 
-// let par = document.querySelector('.par')
-// let inp = document.querySelector('#test')
-// let btn = document.querySelector('#elem')
-// inp.addEventListener('focus', () => inp.value = '')
-// btn.addEventListener('click', function stopClick () {
-// 	par.innerHTML = inp.value
-// 	let setInt = setInterval(() => {
-// 		par.innerHTML--
-// 		if (par.innerHTML <= 0) {
-// 			clearInterval(setInt)
-// 		}
-// 	}, 1000)
-// 	setTimeout(() => {
-// 		inp.value = 'Введите число'
-// 	}, 1000)
-// })
-// Дан абзац и две кнопки. Сделайте так, чтобы по нажатию
-// на первую кнопку в абзаце начал тикать таймер от 1 до бесконечности,
-// а по нажатию на вторую таймер останавливался.
-// <p class="par"></p>
-// <button id="start">start</button>
-// <button id="stop">stop</button>
-
-// let par = document.querySelector('.par')
-// let btn1 = document.querySelector('#start')
-// let btn2 = document.querySelector('#stop')
-// let setInt;
-// let i = 0
-// btn1.addEventListener('click',stopFunc)
-// function stopFunc() {
-// 	setInt = setInterval(() => {
-// 		par.innerHTML = String(i++);
-// 	},1000)
-// 	this.removeEventListener('click', stopFunc);
-// }
-// btn2.addEventListener('click', () => {
-// 	clearInterval(setInt)
-// 	btn1.addEventListener('click', stopFunc);
-// });
-
-
-// Дан абзац. Сделайте так, чтобы каждую секунду
-// он менял свой цвет с красного на зеленый и наоборот.
-// <p class="par"></p>
-// let par = document.querySelector('.par');
-// let setInt = setInterval(() => {
-// 	par.classList.toggle('active')
-// }, 1000)
-
-// Если выводить на экран каждую секунду текущий
-// момент времени, то можно сделать тикающие часы.
-// Реализуйте такие же часики, как показано ниже в образце:
-// <p class="par"></p>
-// let par = document.querySelector('.par');
-// let setInt = setInterval(() => {
-// 	let date = new Date();
-// 	par.innerHTML = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
-// })
-
-// Дан абзац. Напишите код, который выведет сообщение
-// в этот абзац через 10 секунд после загрузки страницы.
-// <p class="par"></p>
+// let parent = document.querySelector('#parent')
+// let elemLi = document.querySelector('#elem');
+// let newLi = document.createElement('li')
+// newLi.textContent = 'new'
 //
-// let par = document.querySelector('.par');
-// let setTim = setTimeout(() => par.innerHTML = 'Hello men', 3000)
+// parent.insertBefore(newLi, elemLi )
 
-// Выведите в консоль число 0.
-// Через секунду выведите число 1, через две секунды выведите число 2,
-// через 3 секунды выведите число 3. И так далее до бесконечности.
 
-// let i = 0;
+// Дан элемент #elem:
+// Вставьте перед этим элементом элемент с текстом 'new'.
+// <ul id="parent">
+// 		<li>text</li>
+// 		<li>text</li>
+// 		<li id="elem">text</li>
+// 		<li>text</li>
+// 		<li>text</li>
+// 	</ul>
+
+// let parent = document.querySelector('#parent')
+// let elemLi = document.querySelector('#elem');
+// let newLi = document.createElement('li')
+// newLi.textContent = 'new'
 //
-// function timer() {
-// 	setTimeout(function() {
-// 		console.log(++i);
+// parent.insertBefore(newLi, elemLi )
+// newLi.addEventListener('click', () => newLi.textContent = newLi.textContent + ' !')
+
+// Дан элемент:
+// Проверьте, является ли этот элемент элементом с классом www.
+// <div id="elem" class="www"></div>
+// let elemDiv = document.querySelector('#elem');
 //
-// 		timer(); // вызовем сами себя
-// 	}, 1000);
-// }
-// timer();
+// console.log(elemDiv.matches('div.www'));
+
+// Даны две переменные elem1 и elem2, содержащие два элемента:
+// Проверьте, является ли элемент из elem2 потомком элемента из elem1.
+// <div id="elem1">
+// 		<p id="elem2"></p>
+// 	</div>
+// let elem1 = document.querySelector('#elem1');
+// let elem2 = document.querySelector('#elem2');
+//
+// console.log(elem1.contains(elem2))
 
 
 
