@@ -88,3 +88,208 @@ function q(arrQ) {
 console.log(q(pairOfFriendly(15)))
 
 console.log(dividerSum(sumDivider(divider(15)), sumDivider(divider(15))));
+
+
+
+
+
+
+let arrInfo = ['Информация сотрудника', 'Моё имя Владимир', 'Моя фамилия Пулин', 'Моё отчество Михайлович', 'Я работаю на севере']
+let body = document.querySelector('body')
+function creatUlList () {
+
+	let list = document.createElement('ul')
+	let text
+	let li
+	let links
+	let links2
+	let link
+	for (let el of arrInfo) {
+		li = document.createElement('li')
+		li.textContent = el
+		li.style.marginBottom = '10px'
+		list.appendChild(li)
+	}
+	list.addEventListener('click', (e) => {
+		let input = document.createElement('input')
+		input.value = e.target.textContent
+		e.target.textContent = ''
+		input.addEventListener('blur', () => {
+			e.target.textContent = input.value
+			if (input.value === '') {
+				e.target.textContent = 'Данные отсутствуют'
+			}
+		})
+		e.target.appendChild(input)
+	})
+	list.style.listStyleType = 'none'
+	list.style.width = '800px'
+	body.appendChild(list)
+
+	let inputNewLi = document.createElement('input')
+	inputNewLi.style.marginTop = '20px'
+	inputNewLi.style.marginLeft = '36px'
+	inputNewLi.setAttribute('placeholder', 'Добавить новое поля')
+	inputNewLi.addEventListener('blur', function () {
+		if (inputNewLi.value !== '') {
+			let li = document.createElement('li')
+			li.innerHTML = inputNewLi.value
+			inputNewLi.value = ''
+			list.appendChild(li)
+			text = li.innerHTML.replace(li.innerHTML, <span>${li.innerHTML}</span>)
+			li.innerHTML = text
+
+			link = document.createElement('a')
+			link.href = ''
+			link.innerHTML = ' Удалить'
+			link.style.textDecoration = 'none'
+			link.style.color = 'red'
+			link.style.float = 'right'
+			link.style.marginLeft = '200px'
+			li.insertAdjacentElement('beforeEnd', link)
+			link.addEventListener('click', (ev) => {
+				li.remove()
+				ev.preventDefault()
+			})
+			links2 = document.createElement('a')
+			links2.href = ''
+			links2.innerHTML = '  Вычеркнуть'
+			links2.style.textDecoration = 'none'
+			links2.style.color = 'green'
+			links2.style.marginRight = '50px'
+			links2.style.float = 'left'
+			link.insertAdjacentElement('beforeBegin', links2)
+			links2.addEventListener('click', function (ev) {
+				li.firstElementChild.style.textDecoration = 'line-through'
+				ev.stopPropagation()
+				ev.preventDefault()
+			})
+		}
+	})
+
+	let lists = document.querySelectorAll('li')
+	for (let elList of lists) {
+		text = elList.innerHTML.replace(elList.innerHTML, <span>${elList.innerHTML}</span>)
+		elList.innerHTML = text
+		link = document.createElement('a')
+		link.href = ''
+		link.innerHTML = '  Удалить'
+		link.style.textDecoration = 'none'
+		link.style.color = 'red'
+		link.style.float = 'right'
+		link.style.marginLeft = '200px'
+
+		elList.insertAdjacentElement('beforeEnd', link)
+		link.addEventListener('click', (ev) => {
+			elList.remove()
+			ev.preventDefault()
+		})
+	}
+	let remove = document.querySelectorAll('span')
+	for (let el of remove) {
+		links = document.createElement('a')
+		links.href = ''
+		links.innerHTML = '  Вычеркнуть'
+		links.style.textDecoration = 'none'
+		links.style.color = 'green'
+		links.style.marginRight = '50px'
+		links.style.float = 'left'
+
+		el.insertAdjacentElement('afterEnd', links)
+		links.addEventListener('click', (ev) => {
+			el.style.textDecoration = 'line-through'
+			ev.stopPropagation()
+			ev.preventDefault()
+		})
+	}
+	list.insertAdjacentElement('afterEnd', inputNewLi)
+}
+
+creatUlList()
+
+
+
+
+
+
+
+
+let span;
+let itemLi;
+let link;
+// 1
+arr.forEach((el) => {
+	itemLi = document.createElement('li')
+	itemLi.textContent = ''
+	listUl.append(itemLi)
+	span = document.createElement('span')
+	span.textContent = el
+	itemLi.append(span)
+	link = document.createElement('a')
+	link.href = '#'
+	link.textContent = ' Delete'
+	link.classList.add('link')
+	itemLi.append(link)
+})
+// 2
+
+// for (let i = 0; i < listUl.length; i++) {
+// 	console.log(listUl[i])
+// }
+
+
+// 3 // 4
+let inp = document.createElement('input')
+listUl.insertAdjacentElement('afterend', inp)
+inp.style.display = 'block'
+inp.addEventListener('blur', () => {
+	let li = document.createElement('li')
+	let span = document.createElement('span')
+	li.textContent = ''
+	span.textContent = inp.value
+	inp.value = ''
+	li.append(span)
+	listUl.append(li)
+	listUl.append(itemLi)
+	let link2 = document.createElement('a')
+	link2.href = '#'
+	link2.textContent = ' Delete'
+	link2.classList.add('link')
+
+	// li.append(link2)
+})
+// 4
+
+// console.log(listUl)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
