@@ -1,235 +1,262 @@
 'use strict'
 
-// ПОВТОР Функции и DOM NEW //
+// ПОВТОР Модули через замыкания NEW //
 
-// Сделайте функцию setAttr, которая будет менять атрибут DOM элементу.
-// Пусть первым параметром функция принимает селектор
-// элемента, вторым - имя атрибута, а третьим - его новое значение.
-// function setAttr(className, nameAttr, valAttr) {
-// 	let elem = document.querySelector(className);
-// 	elem.setAttribute(nameAttr, valAttr);
-// }
+// ;(function() {
+// 	let elem = document.querySelector('#div1'); // первый див
 //
-// setAttr('.el1', 'href', 'https//google.com');
-// setAttr('.el2', 'href', 'https//google.com');
-
-// Сделайте функцию appendText, которая первым
-// параметром будет принимать селектор, а вторым -
-// текст. Сделайте так, чтобы данная функция добавляла текст в конец переданных элементов.
-
-// function appendText (select, textSelect) {
-// 	let itemElem = document.querySelectorAll(select)
-// 	// itemElem.forEach((el) => {
-// 	// 	el.append(" " + textSelect);
-// 	// }) // в конец
-// 	itemElem.forEach((el) => {
-// 		el.prepend(textSelect + " ");
-// 	}) // в начало
-// }
-//
-// appendText('p', 'Hello world')
-
-// Даны абзацы. С помощью созданной нами функции
-// forEach для каждого абзаца добавьте в конец его
-// текста восклицательный знак.
-//
-// function forEach(selector, func) {
-// 	let elems = document.querySelectorAll(selector);
-// 	for (let elem of elems) {
-// 		func(elem);
+// 	function func(num) {
+// 		return num ** 2; // возведем в квадрат
 // 	}
-// }
-// forEach('.elem', (elem) => {
-// 	elem.textContent = elem.textContent + ' !'
-// })
-
-// Даны абзацы. С помощью созданной нами функции
-// forEach для каждого абзаца добавьте ему в начало его порядковый номер.
-
-// function forEach (selector, func) {
-// 	let elems = document.querySelectorAll(selector)
-// 	for (let i = 0; i < elems.length; i++) {
-// 		func(elems[i], i)
+//
+// 	elem.addEventListener('click', function() {
+// 		this.textContent = func(elem.textContent);
+// 	});
+// })();
+//
+// ;(function() {
+// 	let elem = document.querySelector('#div2'); // второй див
+//
+// 	function func(num) {
+// 		return num ** 3; // возведем в куб
 // 	}
-// }
 //
-// forEach('.elem', (el, i) => {
-// 	el.prepend(i + " ")
-// })
+// 	elem.addEventListener('click', function() {
+// 		this.textContent = func(elem.textContent);
+// 	});
+// })();
 
-// Сделайте функцию appendText,
-// которая первым параметром будет принимать
-// DOM элемент, а вторым - текст. Сделайте так, чтобы данная
-// функция добавляла текст в конец этого элемента.
-//<p class="elem1">1</p>
-// <p class="elem2">2</p>
-
-// function appendText (elem, text) {
-// 	elem.append(' ' + text);
-// }
-// let elem1 = document.querySelector('.elem1');
-// appendText(elem1, 'Hello World')
+// ;(function(selector1, selector2) {
+// 	let div = document.querySelector(selector1);
+// 	let btn = document.querySelector(selector2);
 //
-// let elem2 = document.querySelector('.elem2')
-// appendText(elem2, 'Hi')
-
-// Даны абзацы. Получите их, переберите циклом и
-// каждому добавьте в конец '!' с помощью функции appendText,
-// сделанной в предыдущей задаче.
-
-// function appendText (elem, func) {
-// 	for (let el of elem) {
-// 		func(el)
+// 	function func(num) {
+// 		return num * num;
 // 	}
-// }
-// let elem = document.querySelectorAll('p');
-// appendText(elem, (el) => {
-// 	el.append(" " + '!')
-// })
-
-// Сделайте функцию setValue, которая первым параметром будет
-// принимать ссылку на инпут, а вторым - текст. Сделайте так,
-// чтобы данная функция устанавливала переданный текст в value инпута.
-
-// function setValue (linkInput, nameAtr, valText) {
-// 	linkInput.setAttribute(nameAtr, valText)
-// }
-// let input = document.querySelector('#inp');
 //
-// setValue(input, 'value', 'Name')
+// 	btn.addEventListener('click', function() {
+// 		div.textContent = func(div.textContent);
+// 	});
+// })('#div', '#btn');
+
+// Дана кнопка и три инпута,
+// в которые вводятся числа.
+// По нажатию на кнопку выведите в консоль сумму
+// введенных чисел. Реализуйте задачу с помощью модуля.
+// <input type="text" class="inp">
+// <input type="text" class="inp">
+// <input type="text" class="inp">
+// <input type="submit" value="Click me" id="inpBtn">
+// ;(function (selectorBtn, selectorInp) {
+// 	let btn = document.querySelector(selectorBtn)
+// 	let input = document.querySelectorAll(selectorInp)
+// 	let sum = 0
+// 	btn.addEventListener('click', () => {
+// 		input.forEach((el) => {
+// 			sum += +el.value
+// 		})
+// 		console.log(sum)
+// 	})
 //
+// })('#inpBtn', '.inp')
 
-// Сделайте функцию appendText, которая первым
-// параметром будет принимать массив DOM элементов,
-// а вторым - текст. Сделайте так, чтобы данная функция
-// добавляла текст в конец переданных элементов.
-// <p class="elem">1</p>
-// <p class="elem">2</p>
-// <p class="elem">3</p>
-// <p class="elem">4</p>
-// <p class="elem">5</p>
+// ;(function(selector1, selector2,
+// 	selector3, selector4, selector5) {
+// 	let div1 = document.querySelector(selector1);
+// 	let div2 = document.querySelector(selector2);
+// 	let div3 = document.querySelector(selector3);
+// 	let res  = document.querySelector(selector4);
+// 	let btn  = document.querySelector(selector5);
+//
+// 	btn.addEventListener('click', function() {
+// 		let num1 = Number(div1.textContent);
+// 		let num2 = Number(div2.textContent);
+// 		let num3 = Number(div3.textContent);
+//
+// 		res.textContent = String(num1 + num2 + num3);
+// 	});
+// })('#div1', '#div2', '#div3', '#res',
+// 	'#btn');
 
-// function appendText (elems, text) {
-// 	for (let elem of elems) {
-// 		// elem.prepend(text + " ")
-// 		// elem.append(" " + text)
-// 		elem.textContent = text
+// ;(function(root) {
+// 	let parent = document.querySelector(root);
+//
+// 	let div1 = parent.querySelector('#div1');
+// 	let div2 = parent.querySelector('#div2');
+// 	let div3 = parent.querySelector('#div3');
+//
+// 	let res  = parent.querySelector('#res');
+// 	let btn  = parent.querySelector('#btn');
+//
+// 	btn.addEventListener('click', function() {
+// 		let num1 = Number(div1.textContent);
+// 		let num2 = Number(div2.textContent);
+// 		let num3 = Number(div3.textContent);
+//
+// 		res.textContent = String(num1 + num2 + num3);
+// 	});
+// })('#parent');
+
+// let config = {
+// 	root: '#parent', type: 'p', amount: 5
+// }
+// ;(function({root, type, amount}) {
+// 	let parent = document.querySelector(root);
+//
+// 	for (let i = 1; i <= amount; i++) {
+// 		let elem = document.createElement(type);
+// 		parent.append(elem);
 // 	}
-// }
+// })(config);
+
+// Дан следующий модуль:
+// 	Экспортируйте наружу одну из переменных и две любые функции.
+
+// ;(function () {
+// 	let str1 = 'переменная модуля'
+// 	let str2 = 'переменная модуля'
+// 	let str3 = 'переменная модуля'
+// 	window.str1 = str1
+// 	window.str2 = str2
+// 	window.str3 = str3
 //
-// let elems = document.querySelectorAll('.elem');
-// appendText(elems, 'Hi')
-
-// Сделайте функцию appendElem,
-// которая первым параметром будет принимать ссылку на DOM объект,
-// в котором лежит тег ul, а вторым - текст. Сделайте так, чтобы
-// данная функция создавала новую li с переданным текстом и
-// добавляла ее в конец переданного тега ul.
-
-// function appendElems (linkElem, text) {
-// 	let li = document.createElement('li');
-// 	li.textContent = text
-// 	linkElem.style.listStyle = 'none'
-// 	linkElem.append(li)
-// }
-// let list = document.querySelector('#list')
-// appendElems(list,'Hi')
-
-// Дан массив и ul. С помощью функции appendElem,
-// созданной в предыдущей задаче, запишите каждый элемент
-// массива в отдельную li в этом ul.
-
-// function appendElems (linkElem, textArr) {
-// 	for (let el of textArr) {
-// 		let li = document.createElement('li');
-// 		li.textContent = el
-// 		linkElem.style.listStyle = 'none'
-// 		linkElem.append(li)
+// 	function func1 () {
+// 		console.log('функция модуля')
 // 	}
-// }
-// let list = document.querySelector('#list')
-// appendElems(list,['hi', 'world', 'cool'])
+//
+// 	window.func1 = func1
+//
+// 	function func2 () {
+// 		console.log('функция модуля')
+// 	}
+//
+// 	window.func2 = func2
+//
+// 	function func3 () {
+// 		console.log('функция модуля')
+// 	}
+//
+// 	window.func3 = func3
+// })()
+// window.func1()
+// window.func2()
+// window.func3()
+// console.log(window.str1)
+// console.log(window.str2)
+// console.log(window.str3)
+//
+// func1()
+// func2()
+// func3()
+// console.log(str1)
+// console.log(str2)
+// console.log(str3)
 
-// Вот заготовка описанной функции:
-// Допишите код представленной выше заготовки функции.
-// 	Потестируйте работу готовой функции.
-// <div class="parent"></div>
+// ;(function() {
+// 	function func1() {
+// 		alert('функция модуля');
+// 	}
+// 	function func2() {
+// 		alert('функция модуля');
+// 	}
+// 	function func3() {
+// 		alert('функция модуля');
+// 	}
+//
+// 	window.module = {func1: func1, func2:
+// 		func2, func3: func3};
+// })();
+//
+// console.log(module)
 
-// function createTable (rows, cols, parent) {
-// 	let table = document.createElement('table')
-// 	for (let i = 0; i < rows; i++) {
-// 		let tr = document.createElement('tr')
-// 		table.append(tr)
-// 		for (let i = 0; i < cols; i++) {
-// 			let td = document.createElement('td')
-// 			tr.append(td)
+// Дан следующий модуль:
+// Экспортируйте наружу объект с первыми пятью функциями и первыми двумя переменными.
+
+// ;(function() {
+// 	let str1 = 'переменная модуля 1';
+// 	let str2 = 'переменная модуля 2';
+// 	let str3 = 'переменная модуля 3';
+// 	let module = {}
+//
+//
+// 	module.func1 = () => {
+// 		alert('функция модуля 1');
+// 	}
+// 	module.func2 = () => {
+// 		alert('функция модуля 2');
+// 	}
+// 	module.func3 = () => {
+// 		alert('функция модуля 3');
+// 	}
+// 	module.func4 = () => {
+// 		alert('функция модуля 4');
+// 	}
+// 	module.func5 = () => {
+// 		alert('функция модуля 5');
+// 	}
+// 	window.module = module
+// 	window.module2 = {str1, str2, str3}
+// })();
+// console.log(module)
+// module.func1()
+// module.func2()
+// module.func3()
+// module.func4()
+// module.func5()
+// console.log(module2)
+// console.log(module2.str1)
+// console.log(module2.str2)
+// console.log(module2.str3)
+
+// Дан следующий код:
+// 	Оформите этот код в виде модуля.
+// 	Эспортируйте наружу все функции, кроме вспомогательной.
+
+// ;(function () {
+// 	function avg1 (arr) {
+// 		return sum(arr, 1) / arr.length
+//
+// 	}
+//
+// 	function avg2 (arr) {
+// 		return sum(arr, 2) / arr.length
+// 	}
+//
+// 	function avg3 (arr) {
+// 		return sum(arr, 3) / arr.length
+// 	}
+//
+// // вспомогательная функция
+// 	function sum (arr, pow) {
+// 		let res = 0
+//
+// 		for (let elem of arr) {
+// 			res += elem * pow
 // 		}
+// 		return res
 // 	}
-// 	parent.appendChild(table)
-// }
-// let div = document.querySelector('.parent');
-// createTable(4,3, div)
-
-// Переделайте вашу функцию createTable в соответствии с описанным в теории.
-
-// function createTable (rows, cols, parent) {
-// 	let table = document.createElement('table')
-// 	for (let i = 0; i < rows; i++) {
-// 		let tr = document.createElement('tr')
-// 		table.append(tr)
-// 		for (let i = 0; i < cols; i++) {
-// 			let td = document.createElement('td')
-// 			tr.append(td)
-// 		}
-// 	}
-// 	return table
-// }
-// let div = document.querySelector('.parent');
-// let table = createTable(4,3)
-// div.appendChild(table)
-
-// Пусть у нас есть вот такой див с абзацами:
-// С помощью функции createTable создайте новую таблицу,
-// а затем вставьте ее в конец дива.
-// <div id="elem">
-// 		<p>1</p>
-// 		<p>2</p>
-// 		<p>3</p>
-// 	</div>
-// function createTable (rows, cols, parent) {
-// 	let table = document.createElement('table')
-// 	for (let i = 0; i < rows; i++) {
-// 		let tr = document.createElement('tr')
-// 		table.append(tr)
-// 		for (let i = 0; i < cols; i++) {
-// 			let td = document.createElement('td')
-// 			tr.append(td)
-// 		}
-// 	}
-// 	return table
-// }
-// let div = document.querySelector('#elem');
-// let table = createTable(3,4)
-// // div.insertAdjacentElement('afterend',table)
-// div.append(table)
-
-
-// Реализуйте описанную функцию. Проверьте ее работу.
-
-// function createTableByArr (arr) {
-// 	let table = document.createElement('table')
-// 	for (let elTr of arr) {
-// 		let tr = document.createElement('tr')
-// 		table.append(tr)
-// 		for (let elTd of elTr) {
-// 			let td = document.createElement('td')
-// 			td.textContent = elTd;
-// 			tr.append(td)
-// 		}
-// 	}
-// 	return table
-// }
 //
-// let div = document.querySelector('#elem');
-// let table = createTableByArr([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-// div.append(table)
+// 	window.math = { avg1, avg2, avg3 }
+// })()
+// console.log(math.avg1([1, 2, 3]) + math.avg2([1, 2, 3,]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
